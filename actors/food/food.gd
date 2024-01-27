@@ -1,6 +1,8 @@
 class_name Food
 extends RigidBody2D
 
+signal thrown
+
 @export var simlation_step_time := 0.25
 @export var throw_speed_multiplier := 3
 
@@ -27,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	if _throw_force != Vector2.ZERO:
 		apply_central_impulse(-_throw_force)
 		_throw_force = Vector2.ZERO
+		thrown.emit()
 
 
 func _input(event: InputEvent) -> void:

@@ -64,7 +64,11 @@ func client_approaching(client: Client):
 	_update_waiting_client_z_indexes()
 
 
-func food_thrown(food_info: FoodInfo, good: bool):
+func food_thrown(food_info: FoodInfo):
+	_current_food_count -= 1
+
+
+func food_hit(food_info: FoodInfo, good: bool):
 	if good:
 		_money_current += food_info.eat_profit
 

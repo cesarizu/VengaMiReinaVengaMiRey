@@ -9,6 +9,7 @@ const Tray := preload("res://actors/conveyor_belt/Bandeja.png")
 @onready var spawn_point: Marker2D = %Marker2DSpawn
 
 var _trays: Array[Node2D] = []
+var _tray_tweens := {}
 
 
 func _ready() -> void:
@@ -26,6 +27,7 @@ func _on_spawn_food(food_info: FoodInfo):
 	
 	var food: Food = food_info.spawn_scene.instantiate()
 	food.food_info = food_info
+	food.thrown.connect(_on_food_thrown.bind(tray, food))
 	tray.add_child(food)
 	
 	move_to(tray, positions[_trays.size()].position)
@@ -34,6 +36,27 @@ func _on_spawn_food(food_info: FoodInfo):
 
 
 func move_to(tray: Node2D, new_position: Vector2):
+	if tray in _tray_tweens:
+		_tray_tweens[tray].kill()
+		_tray_tweens.erase(tray)
+
 	var tween := get_tree().create_tween()
 	var time := tray.position.distance_to(new_position) / speed
 	tween.tween_property(tray, "position", new_position, time)
+	_tray_tweens[tray] = tween
+	await tween.finished
+	_tray_tweens.erase(tray)
+
+
+func _on_food_thrown(tray: Node2D, food: Food):
+	if tray in _tray_tweens:
+		_tray_tweens[tray].kill()
+		_tray_tweens.erase(tray)
+
+	var tween := get_tree().create_tween()
+	tween.tween_property(tray, "position", tray.position + Vector2.DOWN * 500, 1)
+	GameManager.food_thrown(food.food_info)
+	_trays.erase(tray)
+	
+	for a in _trays.size():
+		move_to(_trays[a], positions[a].position)
