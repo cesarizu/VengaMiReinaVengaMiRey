@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bshkkx1ui1aio"]
+
+[ext_resource type="Script" path="res://scenes/mainMenu/credits/credits_screen.gd" id="1_nqmmo"]
+[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_qnm5l"]
+
+[node name="CreditsScreen" type="CanvasLayer"]
+script = ExtResource("1_nqmmo")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -26.5
+offset_right = 500.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 70
+text = "AQUÍ IRÍAN LOS CRÉDITOS :-)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="backButton" type="Button" parent="."]
+offset_left = 926.0
+offset_top = 569.0
+offset_right = 1134.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 70
+text = "VOLVER"
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

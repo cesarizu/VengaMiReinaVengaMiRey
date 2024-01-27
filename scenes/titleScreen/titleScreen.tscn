@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgi32ntekbkho"]
+
+[ext_resource type="Script" path="res://scenes/titleScreen/titleScreen.gd" id="1_deee6"]
+[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_u4ohn"]
+[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_5p2bn"]
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_deee6")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5p2bn")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.773
+anchor_right = 0.941
+anchor_bottom = 0.883
+offset_left = 0.575996
+offset_top = 0.0959473
+offset_right = -0.0321045
+offset_bottom = -0.184021
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_u4ohn")
+theme_override_font_sizes/font_size = 70
+text = "Presiona la Barra Espaciadora para Continuar"
+horizontal_alignment = 1
+vertical_alignment = 1
