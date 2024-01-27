@@ -30,7 +30,7 @@ func _ready() -> void:
 	_food_timer = Timer.new()
 	_food_timer.autostart = false
 	_food_timer.wait_time = config.food_spawn_interval
-	_food_timer.timeout.connect(_on_client_timer_timeout)
+	_food_timer.timeout.connect(_on_food_timer_timeout)
 	add_child(_food_timer)
 
 
@@ -77,6 +77,7 @@ func _on_client_timer_timeout():
 func _on_food_timer_timeout():
 	if _current_food_count < config.food_spawn_max:
 		spawn_food.emit(config.food_info.pick_random())
+		_current_food_count += 1
 
 
 func _update_waiting_client_z_indexes():
