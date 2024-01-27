@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://b50dvqfm4l7s2"]
+[gd_scene load_steps=2 format=3 uid="uid://b50dvqfm4l7s2"]
+
+[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_ope5y"]
 
 [node name="Button" type="Button"]
+theme_override_fonts/font = ExtResource("1_ope5y")
+theme_override_font_sizes/font_size = 70

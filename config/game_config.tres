@@ -80,4 +80,4 @@ food_info = Array[ExtResource("3_1iw7l")]([SubResource("Resource_ienkd"), SubRes
 client_spawn_interval = 5.0
 client_spawn_max = 8
 client_info = Array[ExtResource("1_imefv")]([SubResource("Resource_ngu1t")])
-call_info = Array[Resource]([SubResource("Resource_skhy6"), SubResource("Resource_2sxip"), SubResource("Resource_5bhog"), SubResource("Resource_571sb"), SubResource("Resource_qtnsd")])
+call_info = Array[ExtResource("1_pks4x")]([SubResource("Resource_skhy6"), SubResource("Resource_2sxip"), SubResource("Resource_5bhog"), SubResource("Resource_571sb"), SubResource("Resource_qtnsd")])

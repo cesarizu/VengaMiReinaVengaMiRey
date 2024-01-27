@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btnefaw6pecvm"]
+[gd_scene load_steps=4 format=3 uid="uid://btnefaw6pecvm"]
 
 [ext_resource type="Script" path="res://scenes/game/earningsScreen/earnings_screen.gd" id="1_h24vq"]
 [ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_xevcq"]
+[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="3_hf1mo"]
 
 [node name="earningsScreen" type="CanvasLayer"]
 script = ExtResource("1_h24vq")
@@ -15,6 +16,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="CenterContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xevcq")
 theme_override_font_sizes/font_size = 70
@@ -23,12 +25,91 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="backButton" type="Button" parent="."]
-offset_left = 981.0
-offset_top = 576.0
-offset_right = 1141.0
-offset_bottom = 637.0
+offset_left = 1743.0
+offset_top = 1003.0
+offset_right = 1903.0
+offset_bottom = 1064.0
 theme_override_fonts/font = ExtResource("1_xevcq")
 theme_override_font_sizes/font_size = 70
 text = "VOLVER"
+
+[node name="ResumenDelDia" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 52.0
+offset_right = 816.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 150
+text = "RESUMEN DEL DÍA"
+vertical_alignment = 1
+
+[node name="Reaccion" type="TextureRect" parent="."]
+offset_left = 158.0
+offset_top = 261.0
+offset_right = 753.0
+offset_bottom = 811.0
+texture = ExtResource("3_hf1mo")
+
+[node name="FraseGraciosa" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 892.0
+offset_right = 854.0
+offset_bottom = 954.0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 70
+text = "Podríamos poner alguna frase 
+graciosa ecuatoriana"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cuentas" type="VBoxContainer" parent="."]
+anchors_preset = -1
+offset_left = 957.0
+offset_top = 265.0
+offset_right = 1849.0
+offset_bottom = 833.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Conseguidos" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Precio" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Propinas" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoConseguidos" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 171
+
+[node name="Total" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_xevcq")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

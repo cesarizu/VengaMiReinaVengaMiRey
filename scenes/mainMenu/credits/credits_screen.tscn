@@ -1,40 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://bshkkx1ui1aio"]
+[gd_scene load_steps=4 format=3 uid="uid://bshkkx1ui1aio"]
 
 [ext_resource type="Script" path="res://scenes/mainMenu/credits/credits_screen.gd" id="1_nqmmo"]
 [ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_qnm5l"]
+[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="3_p4rbo"]
 
 [node name="CreditsScreen" type="CanvasLayer"]
 script = ExtResource("1_nqmmo")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -26.5
-offset_right = 500.0
-offset_bottom = 26.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="CenterContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qnm5l")
-theme_override_font_sizes/font_size = 70
-text = "AQUÍ IRÍAN LOS CRÉDITOS :-)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="backButton" type="Button" parent="."]
-offset_left = 926.0
-offset_top = 569.0
-offset_right = 1134.0
-offset_bottom = 630.0
+offset_left = 1691.0
+offset_top = 995.0
+offset_right = 1899.0
+offset_bottom = 1056.0
 theme_override_fonts/font = ExtResource("1_qnm5l")
 theme_override_font_sizes/font_size = 70
 text = "VOLVER"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 484.0
+offset_top = 40.0
+offset_right = 1472.0
+offset_bottom = 378.0
+texture = ExtResource("3_p4rbo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 102.0
+offset_top = 448.0
+offset_right = 1497.0
+offset_bottom = 1025.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 359.0
+offset_top = 402.0
+offset_right = 1596.0
+offset_bottom = 1007.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Programadores" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 150
+text = "Programadores:"
+
+[node name="Coders" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 125
+text = "Cesar Izurieta
+Atik Santellán"
+
+[node name="Arte" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 150
+text = "Arte:"
+
+[node name="Artists" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 125
+text = "Somang Son
+Harry "
+
+[node name="Musica" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 150
+text = "Audio:"
+
+[node name="Artists2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qnm5l")
+theme_override_font_sizes/font_size = 125
+text = "Diego Reyes"
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

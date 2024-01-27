@@ -6,10 +6,11 @@ signal spawn_food(food_info)
 
 var config: GameConfig = preload("res://config/game_config.tres")
 
-var _money_current := 0:
+var _money_current := 10:
 	set(value):
 		_money_current = value
 		on_money_updated.emit(value)
+
 
 var _client_timer: Timer
 var _food_timer: Timer

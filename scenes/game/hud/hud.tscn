@@ -1,15 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://uxawds7rycpe"]
+[gd_scene load_steps=8 format=3 uid="uid://uxawds7rycpe"]
 
 [ext_resource type="Script" path="res://scenes/game/hud/hud.gd" id="1_k86fv"]
+[ext_resource type="Script" path="res://scenes/game/hud/Calls.gd" id="2_2lpoq"]
 [ext_resource type="PackedScene" uid="uid://b50dvqfm4l7s2" path="res://scenes/game/hud/call_button.tscn" id="2_g6wnb"]
+[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="3_ylqok"]
+[ext_resource type="Script" path="res://scenes/game/hud/actual_earnings.gd" id="5_det78"]
+
+[sub_resource type="Theme" id="Theme_1fx40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52y8i"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_k86fv")
 
 [node name="Calls" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -273.0
+offset_top = 56.0
+offset_right = -42.0
+offset_bottom = 693.0
+grow_horizontal = 0
+theme_override_constants/separation = 60
+script = ExtResource("2_2lpoq")
 
 [node name="Button" parent="Calls" instance=ExtResource("2_g6wnb")]
 layout_mode = 2
+
+[node name="actual_earnings" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.046
+anchor_right = 0.189
+anchor_bottom = 0.194
+offset_left = 0.639999
+offset_top = 0.319996
+offset_right = 47.12
+offset_bottom = -66.52
+theme = SubResource("Theme_1fx40")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ylqok")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_52y8i")
+text = "Ganancias: "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_det78")

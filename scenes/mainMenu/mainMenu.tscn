@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/mainMenu/mainMenu.gd" id="1_c0jos"]
 [ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_x63wo"]
-[ext_resource type="Texture2D" uid="uid://bjaj2marfkc83" path="res://assets/salchipapas.png" id="2_2ovp2"]
+[ext_resource type="Texture2D" uid="uid://dn7mooydqn4hv" path="res://assets/salchipapas.png" id="2_2ovp2"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_c0jos")
@@ -48,10 +48,10 @@ theme_override_font_sizes/font_size = 70
 text = "CRÉDITOS"
 
 [node name="backButton" type="Button" parent="."]
-offset_left = 926.0
-offset_top = 569.0
-offset_right = 1134.0
-offset_bottom = 630.0
+offset_left = 1696.0
+offset_top = 991.0
+offset_right = 1904.0
+offset_bottom = 1052.0
 theme_override_fonts/font = ExtResource("1_x63wo")
 theme_override_font_sizes/font_size = 70
 text = "VOLVER"
