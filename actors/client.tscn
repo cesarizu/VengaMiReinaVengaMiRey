@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://k3timswbiij8"]
+[gd_scene load_steps=5 format=3 uid="uid://k3timswbiij8"]
+
+[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="1_82vss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6f4"]
+size = Vector2(194, 234)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5106"]
+size = Vector2(125, 129)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdi7n"]
+radius = 32.573
 
 [node name="Client" type="Node2D"]
+
+[node name="Torso" type="Sprite2D" parent="."]
+position = Vector2(2.5, 11)
+scale = Vector2(1.53906, 1.82813)
+texture = ExtResource("1_82vss")
+
+[node name="Head" type="Sprite2D" parent="Torso"]
+position = Vector2(-0.974616, -88.6154)
+scale = Vector2(0.649746, 0.547009)
+texture = ExtResource("1_82vss")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Torso" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_0u6f4")
+
+[node name="Head" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -151.5)
+shape = SubResource("RectangleShape2D_e5106")
+
+[node name="Mouth" type="CollisionShape2D" parent="Area2D" groups=["mouth"]]
+position = Vector2(1, -144)
+shape = SubResource("CircleShape2D_vdi7n")

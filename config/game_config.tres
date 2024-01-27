@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="GameConfig" load_steps=14 format=3 uid="uid://bw3qhgd0kg1eq"]
+
+[ext_resource type="Script" path="res://config/game_config.gd" id="1_6xq7d"]
+[ext_resource type="Script" path="res://config/client_info.gd" id="1_imefv"]
+[ext_resource type="Script" path="res://config/call_info.gd" id="1_pks4x"]
+[ext_resource type="PackedScene" uid="uid://ca4q4q84je2xb" path="res://actors/food.tscn" id="2_mejvy"]
+[ext_resource type="PackedScene" uid="uid://k3timswbiij8" path="res://actors/client.tscn" id="2_r2ou8"]
+[ext_resource type="Script" path="res://config/food_info.gd" id="3_1iw7l"]
+
+[sub_resource type="Resource" id="Resource_skhy6"]
+script = ExtResource("1_pks4x")
+text = "Mi Rey"
+cost = 1
+
+[sub_resource type="Resource" id="Resource_2sxip"]
+script = ExtResource("1_pks4x")
+text = "Guapo"
+cost = 1
+
+[sub_resource type="Resource" id="Resource_5bhog"]
+script = ExtResource("1_pks4x")
+text = "Reinita"
+cost = 1
+
+[sub_resource type="Resource" id="Resource_571sb"]
+script = ExtResource("1_pks4x")
+text = "Hermosa"
+cost = 1
+
+[sub_resource type="Resource" id="Resource_qtnsd"]
+script = ExtResource("1_pks4x")
+text = "Tesoro"
+cost = 1
+
+[sub_resource type="Resource" id="Resource_ngu1t"]
+script = ExtResource("1_imefv")
+speed_multiplier = 1.0
+spawn_scene = ExtResource("2_r2ou8")
+
+[sub_resource type="Resource" id="Resource_ienkd"]
+script = ExtResource("3_1iw7l")
+eat_profit = 2
+spawn_cost = 1
+spawn_scene = ExtResource("2_mejvy")
+
+[resource]
+script = ExtResource("1_6xq7d")
+initial_money = 10
+food_spawn_interval = 5.0
+food_spawn_max = 5
+food_info = Array[ExtResource("3_1iw7l")]([SubResource("Resource_ienkd")])
+client_spawn_max = 8
+client_info = Array[ExtResource("1_imefv")]([SubResource("Resource_ngu1t")])
+call_info = Array[Resource]([SubResource("Resource_skhy6"), SubResource("Resource_2sxip"), SubResource("Resource_5bhog"), SubResource("Resource_571sb"), SubResource("Resource_qtnsd")])
