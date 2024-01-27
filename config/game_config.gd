@@ -9,6 +9,7 @@ extends Resource
 @export var food_info: Array[FoodInfo] = []
 
 @export_group("Clients", "client_")
+@export var client_spawn_interval: float = 5.0
 @export var client_spawn_max: int = 8
 @export var client_info: Array[ClientInfo] = []
 

@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/mainMenu/game/mainScene/in_game.tscn")
+	get_tree().change_scene_to_file("res://scenes/game/mainScene/in_game.tscn")
 	pass # Replace with function body.
 
 func _on_options_button_pressed():

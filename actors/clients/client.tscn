@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://k3timswbiij8"]
+[gd_scene load_steps=6 format=3 uid="uid://k3timswbiij8"]
 
-[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="1_82vss"]
+[ext_resource type="Script" path="res://actors/clients/client.gd" id="1_ubts6"]
+[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_f1ppw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6f4"]
 size = Vector2(373, 534)
@@ -12,17 +13,18 @@ size = Vector2(249, 294)
 radius = 69.2604
 
 [node name="Client" type="Node2D"]
+script = ExtResource("1_ubts6")
 
 [node name="Torso" type="Sprite2D" parent="."]
 position = Vector2(1.00001, 1.49999)
 scale = Vector2(2.95313, 4.16406)
-texture = ExtResource("1_82vss")
+texture = ExtResource("2_f1ppw")
 metadata/_edit_lock_ = true
 
 [node name="Head" type="Sprite2D" parent="Torso"]
 position = Vector2(1.01587, -93.5385)
 scale = Vector2(0.649746, 0.547009)
-texture = ExtResource("1_82vss")
+texture = ExtResource("2_f1ppw")
 
 [node name="Area2D" type="Area2D" parent="."]
 

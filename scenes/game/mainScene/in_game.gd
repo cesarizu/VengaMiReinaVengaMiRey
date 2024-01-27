@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_game_over_pressed():
-	get_tree().change_scene_to_file("res://scenes/mainMenu/game/earningsScreen/earnings_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/game/earningsScreen/earnings_screen.tscn")
 	pass # Replace with function body.

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca4q4q84je2xb"]
+[gd_scene load_steps=4 format=3 uid="uid://ca4q4q84je2xb"]
 
-[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="1_sw8xj"]
+[ext_resource type="Script" path="res://actors/food/food.gd" id="1_08vfs"]
+[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_3mlf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ianno"]
 size = Vector2(127, 56)
 
 [node name="Food" type="Node2D"]
+script = ExtResource("1_08vfs")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -17,4 +19,4 @@ shape = SubResource("RectangleShape2D_ianno")
 modulate = Color(0.521569, 1, 0.223529, 1)
 position = Vector2(0, 0.500002)
 scale = Vector2(1, 0.429688)
-texture = ExtResource("1_sw8xj")
+texture = ExtResource("2_3mlf1")
