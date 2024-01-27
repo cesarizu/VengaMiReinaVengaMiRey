@@ -8,7 +8,7 @@ radius = 81.5138
 
 [node name="Food" instance=ExtResource("1_7bbur")]
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_ylcih")
 
 [node name="Good" parent="." index="1"]

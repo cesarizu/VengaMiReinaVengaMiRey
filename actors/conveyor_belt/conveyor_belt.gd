@@ -1,10 +1,14 @@
 extends Node2D
 
+const speed := 256.0
+
+const Tray := preload("res://actors/conveyor_belt/Bandeja.png")
+
 @export var positions: Array[Marker2D] = []
 
 @onready var spawn_point: Marker2D = %Marker2DSpawn
 
-var _food_amount := 0
+var _trays: Array[Node2D] = []
 
 
 func _ready() -> void:
@@ -12,14 +16,24 @@ func _ready() -> void:
 	
 	
 func _on_spawn_food(food_info: FoodInfo):
-	if _food_amount > positions.size(): return
+	if _trays.size() >= positions.size(): return
+
+	var tray := Sprite2D.new()
+	tray.texture = Tray
+	tray.position = spawn_point.position
+	tray.z_index = 2
+	add_child(tray)
 	
 	var food: Food = food_info.spawn_scene.instantiate()
 	food.food_info = food_info
-	food.position = spawn_point.position
-	food.z_index = 2
-	add_child(food)
-
-	food.move_to(positions[_food_amount].position)
+	tray.add_child(food)
 	
-	_food_amount += 1
+	move_to(tray, positions[_trays.size()].position)
+
+	_trays.push_back(tray)
+
+
+func move_to(tray: Node2D, new_position: Vector2):
+	var tween := get_tree().create_tween()
+	var time := tray.position.distance_to(new_position) / speed
+	tween.tween_property(tray, "position", new_position, time)

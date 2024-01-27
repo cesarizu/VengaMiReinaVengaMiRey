@@ -1,23 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca4q4q84je2xb"]
+[gd_scene load_steps=7 format=3 uid="uid://ca4q4q84je2xb"]
 
 [ext_resource type="Script" path="res://actors/food/food.gd" id="1_08vfs"]
 [ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_3mlf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ianno"]
-size = Vector2(127, 129)
+size = Vector2(168, 164)
 
-[node name="Food" type="Node2D"]
+[sub_resource type="Curve" id="Curve_cya2f"]
+max_value = 5.0
+_data = [Vector2(0, 2.76122), 0.0, 0.0, 0, 0, Vector2(1, 0.998037), -4.62249, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_b016d"]
+colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dip7d"]
+
+[node name="Food" type="RigidBody2D"]
+input_pickable = true
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_08vfs")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_ianno")
+metadata/_edit_lock_ = true
+
+[node name="Direction" type="Line2D" parent="."]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(0, 0, 85, -149, 235, -268, 408, -336, 623, -361, 800, -319, 895, -266)
+width_curve = SubResource("Curve_cya2f")
+gradient = SubResource("Gradient_b016d")
+
+[node name="Hold" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+texture = SubResource("PlaceholderTexture2D_dip7d")
+centered = false
+offset = Vector2(0, -10)
+region_enabled = true
+region_rect = Rect2(0, 0, 20, 20)
 
 [node name="Good" type="Sprite2D" parent="."]
 texture = ExtResource("2_3mlf1")
+metadata/_edit_lock_ = true
 
 [node name="Bad" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("2_3mlf1")
+metadata/_edit_lock_ = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
