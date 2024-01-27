@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8l7dtomjumns"]
+
+[ext_resource type="PackedScene" uid="uid://ca4q4q84je2xb" path="res://actors/food/food.tscn" id="1_7bbur"]
+[ext_resource type="Texture2D" uid="uid://bfdwn7dafgenw" path="res://actors/food/variants/HumitaBien.png" id="2_idj8a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylcih"]
+radius = 81.5138
+
+[node name="Food" instance=ExtResource("1_7bbur")]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_ylcih")
+
+[node name="Good" parent="." index="1"]
+texture = ExtResource("2_idj8a")
+
+[node name="Bad" parent="." index="2"]
+texture = ExtResource("2_idj8a")

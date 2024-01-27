@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf7mpqo2ver7x"]
+
+[ext_resource type="PackedScene" uid="uid://ca4q4q84je2xb" path="res://actors/food/food.tscn" id="1_4yqiq"]
+[ext_resource type="Texture2D" uid="uid://cx6xs6ql2evcd" path="res://actors/food/variants/SalchiBien.png" id="2_jiigw"]
+
+[node name="Food" instance=ExtResource("1_4yqiq")]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2, 17)
+
+[node name="Good" parent="." index="1"]
+texture = ExtResource("2_jiigw")
+
+[node name="Bad" parent="." index="2"]
+texture = ExtResource("2_jiigw")
