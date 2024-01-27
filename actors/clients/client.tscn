@@ -1,60 +1,230 @@
-[gd_scene load_steps=8 format=3 uid="uid://k3timswbiij8"]
+[gd_scene load_steps=18 format=3 uid="uid://k3timswbiij8"]
 
 [ext_resource type="Script" path="res://actors/clients/client.gd" id="1_ubts6"]
-[ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_f1ppw"]
 [ext_resource type="Texture2D" uid="uid://bfdwn7dafgenw" path="res://actors/food/variants/HumitaBien.png" id="3_01m3d"]
+[ext_resource type="Texture2D" uid="uid://cg3iaoga1u0jh" path="res://actors/clients/spriteCharacters.png" id="3_x7i81"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bnovq"]
+[sub_resource type="Animation" id="Animation_se3m7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.00001, 1.49999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"happy"]
+}
+
+[sub_resource type="Animation" id="Animation_35do7"]
+resource_name = "waiting"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.00001, 1.49999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"open"]
+}
+
+[sub_resource type="Animation" id="Animation_k82sg"]
+resource_name = "walking_sad"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.00001, 1.49999), Vector2(1, -12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"sad"]
+}
+
+[sub_resource type="Animation" id="Animation_ulvuj"]
+resource_name = "walking_happy"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.00001, 1.49999), Vector2(1, -12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"happy"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_27pnb"]
+_data = {
+"RESET": SubResource("Animation_se3m7"),
+"waiting": SubResource("Animation_35do7"),
+"walking_happy": SubResource("Animation_ulvuj"),
+"walking_sad": SubResource("Animation_k82sg")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vykb0"]
+atlas = ExtResource("3_x7i81")
+region = Rect2(0, 711, 373, 237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1ik6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f1ppw")
+"texture": SubResource("AtlasTexture_vykb0")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6f4"]
-size = Vector2(373, 534)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk7ha"]
+atlas = ExtResource("3_x7i81")
+region = Rect2(0, 237, 298, 237)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5106"]
-size = Vector2(249, 294)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv24l"]
+atlas = ExtResource("3_x7i81")
+region = Rect2(0, 0, 298, 237)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddrqy"]
+atlas = ExtResource("3_x7i81")
+region = Rect2(0, 474, 298, 237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnovq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk7ha")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv24l")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddrqy")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsvug"]
+radius = 100.5
+height = 322.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reye8"]
+radius = 129.059
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vdi7n"]
-radius = 69.2604
+radius = 46.2385
 
 [node name="Client" type="Node2D"]
 script = ExtResource("1_ubts6")
 
-[node name="Torso" type="Sprite2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_27pnb")
+}
+autoplay = "walking_happy"
+
+[node name="Torso" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.00001, 1.49999)
-scale = Vector2(2.95313, 4.16406)
-texture = ExtResource("2_f1ppw")
-metadata/_edit_lock_ = true
+sprite_frames = SubResource("SpriteFrames_p1ik6")
 
 [node name="Head" type="AnimatedSprite2D" parent="Torso"]
-position = Vector2(1.01587, -93.5385)
-scale = Vector2(0.649746, 0.547009)
+position = Vector2(0, -195.5)
 sprite_frames = SubResource("SpriteFrames_bnovq")
+animation = &"happy"
+
+[node name="Food" type="Sprite2D" parent="Torso/Head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(122, -107.5)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_01m3d")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Torso" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.5, 4)
-shape = SubResource("RectangleShape2D_0u6f4")
+position = Vector2(0, 37)
+shape = SubResource("CapsuleShape2D_tsvug")
 
 [node name="Head" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3.5, -391)
-shape = SubResource("RectangleShape2D_e5106")
+position = Vector2(0, -184)
+shape = SubResource("CircleShape2D_reye8")
 
 [node name="Mouth" type="CollisionShape2D" parent="Area2D" groups=["mouth"]]
-position = Vector2(0, -338)
+position = Vector2(0, -133)
 shape = SubResource("CircleShape2D_vdi7n")
-
-[node name="Food" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(137, -529)
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("3_01m3d")

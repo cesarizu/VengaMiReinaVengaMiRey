@@ -16,10 +16,10 @@ texture = ExtResource("2_vqurn")
 centered = false
 
 [node name="GameOver" type="Button" parent="."]
-offset_left = 15.0
-offset_top = 574.0
-offset_right = 432.0
-offset_bottom = 717.0
+offset_left = 443.0
+offset_top = 14.0
+offset_right = 860.0
+offset_bottom = 157.0
 theme = ExtResource("3_e8i8n")
 theme_type_variation = &"FlatButton"
 text = "Game Over"

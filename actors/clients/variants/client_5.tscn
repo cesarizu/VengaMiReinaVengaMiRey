@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://che0vamlxhkp7"]
+
+[ext_resource type="PackedScene" uid="uid://k3timswbiij8" path="res://actors/clients/client.tscn" id="1_7ecpx"]
+[ext_resource type="Texture2D" uid="uid://cg3iaoga1u0jh" path="res://actors/clients/spriteCharacters.png" id="2_v4gec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tevx"]
+atlas = ExtResource("2_v4gec")
+region = Rect2(1192, 711, 298, 237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gj1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tevx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stdln"]
+atlas = ExtResource("2_v4gec")
+region = Rect2(1192, 237, 298, 237)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8m1h"]
+atlas = ExtResource("2_v4gec")
+region = Rect2(1192, 0, 298, 237)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruqpa"]
+atlas = ExtResource("2_v4gec")
+region = Rect2(1192, 474, 298, 237)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5j508"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stdln")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8m1h")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruqpa")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[node name="Client" instance=ExtResource("1_7ecpx")]
+
+[node name="Torso" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_4gj1n")
+
+[node name="Head" parent="Torso" index="0"]
+sprite_frames = SubResource("SpriteFrames_5j508")
+animation = &"sad"
+
+[node name="Food" parent="Torso/Head" index="0"]
+visible = true
+position = Vector2(52, -35)

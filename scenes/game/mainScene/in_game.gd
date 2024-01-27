@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-const left := Vector2(-200, 500)
-const right := Vector2(1920 + 200, 500)
+const left := Vector2(-200, 700)
+const right := Vector2(1920 + 200, 700)
 
 
 func _ready():
@@ -25,7 +25,7 @@ func _on_spawn_client(client_info: ClientInfo):
 	client.z_index = -50
 	add_child(client)
 	
-	client.move_to(right if face_left else left, )
+	client.walk_happy_to(right if face_left else left, )
 
 	GameManager.client_spawned(client)
 	await client.tween.finished
