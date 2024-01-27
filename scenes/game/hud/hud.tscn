@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://uxawds7rycpe"]
+[gd_scene load_steps=3 format=3 uid="uid://uxawds7rycpe"]
+
+[ext_resource type="Script" path="res://scenes/game/hud/hud.gd" id="1_k86fv"]
+[ext_resource type="PackedScene" uid="uid://b50dvqfm4l7s2" path="res://scenes/game/hud/call_button.tscn" id="2_g6wnb"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_k86fv")
+
+[node name="Calls" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" parent="Calls" instance=ExtResource("2_g6wnb")]
+layout_mode = 2
