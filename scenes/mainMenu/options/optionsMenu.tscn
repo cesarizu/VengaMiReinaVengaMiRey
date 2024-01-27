@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djhlm0cd5yk04"]
 
-[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_mb0c1"]
 [ext_resource type="Script" path="res://scenes/mainMenu/options/optionsMenu.gd" id="1_w8fsr"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="2_10oy8"]
 
 [node name="Opciones" type="CanvasLayer"]
 script = ExtResource("1_w8fsr")
@@ -16,19 +16,19 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mb0c1")
-theme_override_font_sizes/font_size = 70
+theme = ExtResource("2_10oy8")
+theme_type_variation = &"TooltipLabel"
 text = "Opciones"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="backButton" type="Button" parent="."]
-offset_left = 1745.0
-offset_top = 1000.0
-offset_right = 1905.0
-offset_bottom = 1061.0
-theme_override_fonts/font = ExtResource("1_mb0c1")
-theme_override_font_sizes/font_size = 70
+offset_left = 1606.0
+offset_top = 946.0
+offset_right = 1904.0
+offset_bottom = 1068.0
+theme = ExtResource("2_10oy8")
+theme_type_variation = &"FlatButton"
 text = "VOLVER"
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

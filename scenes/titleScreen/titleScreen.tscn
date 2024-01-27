@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgi32ntekbkho"]
 
 [ext_resource type="Script" path="res://scenes/titleScreen/titleScreen.gd" id="1_deee6"]
-[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_u4ohn"]
 [ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_5p2bn"]
+[ext_resource type="FontFile" uid="uid://b6nw23mprfllm" path="res://assets/Margarine-Regular.ttf" id="3_mij2y"]
 
 [node name="TitleScreen" type="CanvasLayer"]
 script = ExtResource("1_deee6")
@@ -40,7 +40,8 @@ offset_right = -0.0321045
 offset_bottom = -0.184021
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_u4ohn")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mij2y")
 theme_override_font_sizes/font_size = 70
 text = "Presiona la Barra Espaciadora para Continuar"
 horizontal_alignment = 1

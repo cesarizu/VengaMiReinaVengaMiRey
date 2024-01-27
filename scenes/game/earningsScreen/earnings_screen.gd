@@ -12,11 +12,11 @@ func _ready():
 	var failed = 5
 	var losses = price*5
 	var earnings = incomes - losses
-	$Cuentas/Conseguidos.text = "Pedidos Conseguidos " + str(achieved)
-	$Cuentas/Precio.text = "Precio " + str(price) 
-	$Cuentas/Propinas.text = "Propinas " + str(tips) 
-	$Cuentas/NoConseguidos.text = "No conseguidos " + str(failed)
-	$Cuentas/Total.text = "TOTAL " + str(earnings)
+	$Cuentas/ConseguidosNum.text = str(achieved)
+	$Cuentas/PrecioNum.text = str(price) 
+	$Cuentas/PropinasNum.text = str(tips) 
+	$Cuentas/NoConseguidosNum.text = str(failed)
+	$Cuentas/TotalNum.text = str(earnings)
 	pass # Replace with function body.
 
 

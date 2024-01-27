@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://btnefaw6pecvm"]
+[gd_scene load_steps=5 format=3 uid="uid://btnefaw6pecvm"]
 
 [ext_resource type="Script" path="res://scenes/game/earningsScreen/earnings_screen.gd" id="1_h24vq"]
 [ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_xevcq"]
 [ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="3_hf1mo"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="3_hmqke"]
 
 [node name="earningsScreen" type="CanvasLayer"]
 script = ExtResource("1_h24vq")
@@ -25,12 +26,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="backButton" type="Button" parent="."]
-offset_left = 1743.0
-offset_top = 1003.0
-offset_right = 1903.0
-offset_bottom = 1064.0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+offset_left = 1605.0
+offset_top = 935.0
+offset_right = 1898.0
+offset_bottom = 1057.0
+theme = ExtResource("3_hmqke")
+theme_type_variation = &"FlatButton"
 text = "VOLVER"
 
 [node name="ResumenDelDia" type="Label" parent="."]
@@ -38,8 +39,8 @@ offset_left = 58.0
 offset_top = 52.0
 offset_right = 816.0
 offset_bottom = 165.0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 150
+theme = ExtResource("3_hmqke")
+theme_type_variation = &"TooltipLabel"
 text = "RESUMEN DEL DÍA"
 vertical_alignment = 1
 
@@ -51,19 +52,20 @@ offset_bottom = 811.0
 texture = ExtResource("3_hf1mo")
 
 [node name="FraseGraciosa" type="Label" parent="."]
-offset_left = 66.0
-offset_top = 892.0
-offset_right = 854.0
-offset_bottom = 954.0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+offset_left = 90.0
+offset_top = 882.0
+offset_right = 838.0
+offset_bottom = 1021.0
+theme = ExtResource("3_hmqke")
+theme_type_variation = &"TooltipLabel"
+theme_override_font_sizes/font_size = 50
 text = "Podríamos poner alguna frase 
 graciosa ecuatoriana"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cuentas" type="VBoxContainer" parent="."]
-anchors_preset = -1
+[node name="Cuentas2" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 957.0
 offset_top = 265.0
 offset_right = 1849.0
@@ -71,7 +73,30 @@ offset_bottom = 833.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
+[node name="Cuentas" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.108
+anchor_right = 0.5
+anchor_bottom = 0.108
+offset_left = -24.0
+offset_top = 130.36
+offset_right = 867.0
+offset_bottom = 755.36
+theme = ExtResource("3_hmqke")
+theme_override_constants/h_separation = 325
+theme_override_constants/v_separation = 30
+columns = 2
+
 [node name="Conseguidos" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "PEDIDOS ENTREGADOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConseguidosNum" type="Label" parent="Cuentas"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_xevcq")
@@ -82,33 +107,72 @@ vertical_alignment = 1
 [node name="Precio" type="Label" parent="Cuentas"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
+text = "PRECIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PrecioNum" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Propinas" type="Label" parent="Cuentas"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
+text = "PROPINAS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PropinasNum" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 50
+text = "
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NoConseguidos" type="Label" parent="Cuentas"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
+text = "PEDIDOS NO ENTREGADOS"
 horizontal_alignment = 2
 vertical_alignment = 1
 justification_flags = 171
 
+[node name="NoConseguidosNum" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 171
+
+[node name="Blank" type="Label" parent="Cuentas"]
+layout_mode = 2
+
+[node name="Blank2" type="Label" parent="Cuentas"]
+layout_mode = 2
+
 [node name="Total" type="Label" parent="Cuentas"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
+text = "TOTAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalNum" type="Label" parent="Cuentas"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" path="res://scenes/game/hud/hud.gd" id="1_k86fv"]
 [ext_resource type="Script" path="res://scenes/game/hud/Calls.gd" id="2_2lpoq"]
-[ext_resource type="PackedScene" uid="uid://b50dvqfm4l7s2" path="res://scenes/game/hud/call_button.tscn" id="2_g6wnb"]
-[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="3_ylqok"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="4_4jla2"]
 [ext_resource type="Script" path="res://scenes/game/hud/actual_earnings.gd" id="5_det78"]
+[ext_resource type="FontFile" uid="uid://b6nw23mprfllm" path="res://assets/Margarine-Regular.ttf" id="5_vdyto"]
+[ext_resource type="Texture2D" uid="uid://bghv3phnxob3p" path="res://scenes/game/hud/MoneyBanner.png" id="6_n70cr"]
 
-[sub_resource type="Theme" id="Theme_1fx40"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52y8i"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgeex"]
+texture = ExtResource("6_n70cr")
+texture_margin_left = 91.0
+texture_margin_top = 18.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_k86fv")
@@ -23,28 +27,26 @@ offset_top = 56.0
 offset_right = -42.0
 offset_bottom = 693.0
 grow_horizontal = 0
-theme_override_constants/separation = 60
+theme = ExtResource("4_4jla2")
+theme_override_constants/separation = 40
 script = ExtResource("2_2lpoq")
 
-[node name="Button" parent="Calls" instance=ExtResource("2_g6wnb")]
-layout_mode = 2
-
 [node name="actual_earnings" type="Label" parent="."]
+texture_filter = 1
 anchors_preset = -1
 anchor_left = 0.033
 anchor_top = 0.046
 anchor_right = 0.189
 anchor_bottom = 0.194
-offset_left = 0.639999
-offset_top = 0.319996
-offset_right = 47.12
-offset_bottom = -66.52
-theme = SubResource("Theme_1fx40")
+offset_left = -20.36
+offset_top = -35.68
+offset_right = 60.12
+offset_bottom = -72.52
+theme_override_colors/font_color = Color(0.933333, 0.545098, 0.301961, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ylqok")
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxFlat_52y8i")
-text = "Ganancias: "
+theme_override_fonts/font = ExtResource("5_vdyto")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_vgeex")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_det78")

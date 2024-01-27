@@ -1,59 +1,47 @@
 [gd_scene load_steps=4 format=3 uid="uid://k00xohxst68s"]
 
 [ext_resource type="Script" path="res://scenes/mainMenu/mainMenu.gd" id="1_c0jos"]
-[ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_x63wo"]
 [ext_resource type="Texture2D" uid="uid://dn7mooydqn4hv" path="res://assets/salchipapas.png" id="2_2ovp2"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="2_74bw5"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_c0jos")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 1297.0
+offset_top = 184.0
+offset_right = 1766.0
+offset_bottom = 898.0
+auto_translate = false
+localize_numeral_system = false
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(10, 10)
 anchors_preset = -1
 anchor_left = 0.902
 anchor_top = 0.5
 anchor_right = 0.902
 anchor_bottom = 0.5
-offset_left = -458.104
-offset_top = -95.0
-offset_right = 112.896
-offset_bottom = 96.0
+offset_left = -708.84
+offset_top = -435.0
+offset_right = 173.16
+offset_bottom = 446.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 size_flags_stretch_ratio = 10.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-auto_translate = false
-localize_numeral_system = false
-
-[node name="playButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_x63wo")
-theme_override_font_sizes/font_size = 70
-text = "JUGAR"
-
-[node name="optionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_x63wo")
-theme_override_font_sizes/font_size = 70
-text = "OPCIONES"
-
-[node name="creditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_x63wo")
-theme_override_font_sizes/font_size = 70
-text = "CRÉDITOS"
-
 [node name="backButton" type="Button" parent="."]
 offset_left = 1696.0
 offset_top = 991.0
 offset_right = 1904.0
 offset_bottom = 1052.0
-theme_override_fonts/font = ExtResource("1_x63wo")
-theme_override_font_sizes/font_size = 70
+theme = ExtResource("2_74bw5")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 36
 text = "VOLVER"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -70,7 +58,36 @@ grow_vertical = 2
 texture = ExtResource("2_2ovp2")
 expand_mode = 1
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/playButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/creditsButton" to="." method="_on_credits_button_pressed"]
+[node name="playButton" type="Button" parent="."]
+offset_left = 1302.0
+offset_top = 281.0
+offset_right = 1594.0
+offset_bottom = 419.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("2_74bw5")
+theme_type_variation = &"FlatButton"
+text = "JUGAR"
+
+[node name="optionsButton" type="Button" parent="."]
+offset_left = 1232.0
+offset_top = 432.0
+offset_right = 1651.0
+offset_bottom = 565.0
+theme = ExtResource("2_74bw5")
+theme_type_variation = &"FlatButton"
+text = "OPCIONES"
+
+[node name="creditsButton" type="Button" parent="."]
+offset_left = 1216.0
+offset_top = 584.0
+offset_right = 1675.0
+offset_bottom = 738.0
+theme = ExtResource("2_74bw5")
+theme_type_variation = &"FlatButton"
+text = "CRÉDITOS"
+
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="optionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="creditsButton" to="." method="_on_credits_button_pressed"]
