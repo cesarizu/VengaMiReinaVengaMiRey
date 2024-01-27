@@ -1,19 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqnuirrdks3pr"]
+[gd_scene load_steps=6 format=3 uid="uid://cqnuirrdks3pr"]
 
-[ext_resource type="Script" path="res://scenes/mainMenu/game/mainScene/in_game.gd" id="1_w6q57"]
+[ext_resource type="Script" path="res://scenes/game/mainScene/in_game.gd" id="1_w6q57"]
 [ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="2_0wprt"]
 [ext_resource type="Texture2D" uid="uid://d1nxqagillv6u" path="res://assets/Boceto.png" id="2_jswe2"]
 [ext_resource type="PackedScene" uid="uid://7jo2falmuhh" path="res://actors/conveyor_belt/conveyor_belt.tscn" id="4_ob262"]
+[ext_resource type="PackedScene" uid="uid://uxawds7rycpe" path="res://scenes/game/hud/hud.tscn" id="5_poiqu"]
 
-[node name="inGame" type="CanvasLayer"]
+[node name="InGame" type="CanvasLayer"]
 script = ExtResource("1_w6q57")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -100
 scale = Vector2(1, 0.993)
 texture = ExtResource("2_jswe2")
 centered = false
 
-[node name="gameOver" type="Button" parent="."]
+[node name="GameOver" type="Button" parent="."]
 offset_left = 826.0
 offset_top = 523.0
 offset_right = 1136.0
@@ -23,6 +25,8 @@ theme_override_font_sizes/font_size = 70
 text = "Game Over"
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("4_ob262")]
-visible = false
+z_index = 1
 
-[connection signal="pressed" from="gameOver" to="." method="_on_game_over_pressed"]
+[node name="HUD" parent="." instance=ExtResource("5_poiqu")]
+
+[connection signal="pressed" from="GameOver" to="." method="_on_game_over_pressed"]

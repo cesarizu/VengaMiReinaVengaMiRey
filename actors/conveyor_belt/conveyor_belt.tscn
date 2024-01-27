@@ -42,8 +42,9 @@ _data = {
 "run": SubResource("Animation_xnnwx")
 }
 
-[node name="ConveyorBelt" type="Node2D"]
+[node name="ConveyorBelt" type="Node2D" node_paths=PackedStringArray("positions")]
 script = ExtResource("1_5eip6")
+positions = [NodePath("Marker2D_1"), NodePath("Marker2D_2"), NodePath("Marker2D_3"), NodePath("Marker2D_4"), NodePath("Marker2D_5")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -58,6 +59,7 @@ texture = ExtResource("2_yyyv1")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 388)
+metadata/_edit_lock_ = true
 
 [node name="Border" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -65,27 +67,34 @@ position = Vector2(959, 760)
 texture = ExtResource("2_genhj")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 74)
+metadata/_edit_lock_ = true
 
 [node name="Marker2D_1" type="Marker2D" parent="."]
-position = Vector2(192, 920)
+position = Vector2(192, 940)
 scale = Vector2(1, 2.42969)
+metadata/_edit_lock_ = true
 
 [node name="Marker2D_2" type="Marker2D" parent="."]
-position = Vector2(576, 920)
+position = Vector2(576, 940)
 scale = Vector2(1, 2.42969)
+metadata/_edit_lock_ = true
 
 [node name="Marker2D_3" type="Marker2D" parent="."]
-position = Vector2(960, 920)
+position = Vector2(960, 940)
 scale = Vector2(1, 2.42969)
+metadata/_edit_lock_ = true
 
 [node name="Marker2D_4" type="Marker2D" parent="."]
-position = Vector2(1344, 920)
+position = Vector2(1344, 940)
 scale = Vector2(1, 2.42969)
+metadata/_edit_lock_ = true
 
 [node name="Marker2D_5" type="Marker2D" parent="."]
-position = Vector2(1728, 920)
+position = Vector2(1728, 940)
 scale = Vector2(1, 2.42969)
+metadata/_edit_lock_ = true
 
 [node name="Marker2DSpawn" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(2112, 920)
+position = Vector2(2112, 940)
+metadata/_edit_lock_ = true
