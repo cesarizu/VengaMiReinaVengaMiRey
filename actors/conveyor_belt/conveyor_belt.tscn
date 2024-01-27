@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://7jo2falmuhh"]
+
+[ext_resource type="Script" path="res://actors/conveyor_belt/conveyor_belt.gd" id="1_5eip6"]
+[ext_resource type="Texture2D" uid="uid://crwvhds77e4f5" path="res://actors/conveyor_belt/FiloBanda.png" id="2_genhj"]
+[ext_resource type="Texture2D" uid="uid://cusd6ufansoe4" path="res://actors/conveyor_belt/BandaTres.png" id="2_yyyv1"]
+
+[sub_resource type="Animation" id="Animation_xnnwx"]
+resource_name = "run"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Belt:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 1920, 388), Rect2(1196, 0, 1920, 388)]
+}
+
+[sub_resource type="Animation" id="Animation_uari7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Belt:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 1920, 388)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_inex4"]
+_data = {
+"RESET": SubResource("Animation_uari7"),
+"run": SubResource("Animation_xnnwx")
+}
+
+[node name="ConveyorBelt" type="Node2D"]
+script = ExtResource("1_5eip6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_inex4")
+}
+autoplay = "run"
+
+[node name="Belt" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, 787)
+texture = ExtResource("2_yyyv1")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 388)
+
+[node name="Border" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(959, 760)
+texture = ExtResource("2_genhj")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 74)
+
+[node name="Marker2D_1" type="Marker2D" parent="."]
+position = Vector2(192, 920)
+scale = Vector2(1, 2.42969)
+
+[node name="Marker2D_2" type="Marker2D" parent="."]
+position = Vector2(576, 920)
+scale = Vector2(1, 2.42969)
+
+[node name="Marker2D_3" type="Marker2D" parent="."]
+position = Vector2(960, 920)
+scale = Vector2(1, 2.42969)
+
+[node name="Marker2D_4" type="Marker2D" parent="."]
+position = Vector2(1344, 920)
+scale = Vector2(1, 2.42969)
+
+[node name="Marker2D_5" type="Marker2D" parent="."]
+position = Vector2(1728, 920)
+scale = Vector2(1, 2.42969)
+
+[node name="Marker2DSpawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2112, 920)

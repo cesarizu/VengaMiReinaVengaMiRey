@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1wwf0o24jddd"
-path="res://.godot/imported/mainScreenConcept.png-a070300ff3a7744aa498a0b5d89a9972.ctex"
+uid="uid://cusd6ufansoe4"
+path="res://.godot/imported/BandaTres.png-adf54fa11bc3c12a3e135f14488e9090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mainScreenConcept.png"
-dest_files=["res://.godot/imported/mainScreenConcept.png-a070300ff3a7744aa498a0b5d89a9972.ctex"]
+source_file="res://actors/conveyor_belt/BandaTres.png"
+dest_files=["res://.godot/imported/BandaTres.png-adf54fa11bc3c12a3e135f14488e9090.ctex"]
 
 [params]
 
