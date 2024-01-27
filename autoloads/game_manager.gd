@@ -3,6 +3,7 @@ extends Node
 signal on_money_updated(money)
 signal spawn_client(client_info)
 signal spawn_food(food_info)
+signal food_thrown(food)
 
 var config: GameConfig = preload("res://config/game_config.tres")
 
@@ -60,17 +61,30 @@ func call_client(call_info: CallInfo) -> bool:
 
 
 func client_approaching(client: Client):
+	_passing_clients.erase(client)
 	_waiting_clients.push_back(client)
 	_update_waiting_client_z_indexes()
 
 
-func food_thrown(food_info: FoodInfo):
+func client_left(client: Client):
+	_passing_clients.erase(client)
+	_waiting_clients.erase(client)
+	_update_waiting_client_z_indexes()
+
+
+func notify_food_thrown(food: Food):
 	_current_food_count -= 1
+	food_thrown.emit(food)
 
 
 func food_hit(food_info: FoodInfo, good: bool):
 	if good:
 		_money_current += food_info.eat_profit
+
+
+func _update_waiting_client_z_indexes():
+	for a in _waiting_clients.size():
+		_waiting_clients[a].z_index = -a
 
 
 func _on_client_timer_timeout():
@@ -82,8 +96,3 @@ func _on_food_timer_timeout():
 	if _current_food_count < config.food_spawn_max:
 		spawn_food.emit(config.food_info.pick_random())
 		_current_food_count += 1
-
-
-func _update_waiting_client_z_indexes():
-	for a in _waiting_clients.size():
-		_waiting_clients[a].z_index = -a

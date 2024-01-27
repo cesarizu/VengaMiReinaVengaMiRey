@@ -17,5 +17,4 @@ func _ready() -> void:
 
 
 func _on_button_pressed(info: CallInfo):
-	#GameManager.call(info)
-	print(info)
+	GameManager.call_client(info)

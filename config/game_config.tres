@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameConfig" load_steps=22 format=3 uid="uid://bw3qhgd0kg1eq"]
+[gd_resource type="Resource" script_class="GameConfig" load_steps=27 format=3 uid="uid://bw3qhgd0kg1eq"]
 
 [ext_resource type="Script" path="res://config/game_config.gd" id="1_6xq7d"]
 [ext_resource type="Script" path="res://config/client_info.gd" id="1_imefv"]
@@ -7,33 +7,38 @@
 [ext_resource type="PackedScene" uid="uid://k3timswbiij8" path="res://actors/clients/client.tscn" id="3_llpkg"]
 [ext_resource type="PackedScene" uid="uid://b8l7dtomjumns" path="res://actors/food/variants/humita.tscn" id="5_3egql"]
 [ext_resource type="PackedScene" uid="uid://30uog14r41kv" path="res://actors/food/variants/locro.tscn" id="6_fcqtb"]
+[ext_resource type="Texture2D" uid="uid://bfdwn7dafgenw" path="res://actors/food/variants/HumitaBien.png" id="6_fg0s7"]
 [ext_resource type="PackedScene" uid="uid://bcyaf8befece7" path="res://actors/food/variants/quimbolito.tscn" id="7_id8l2"]
+[ext_resource type="Texture2D" uid="uid://do4o4sktkdyqt" path="res://actors/food/variants/Locrobien.png" id="8_71b4k"]
 [ext_resource type="PackedScene" uid="uid://bf7mpqo2ver7x" path="res://actors/food/variants/salchi.tscn" id="8_mqy4j"]
 [ext_resource type="PackedScene" uid="uid://cs8q0e4cgct6v" path="res://actors/food/variants/tripa.tscn" id="9_sqgnt"]
+[ext_resource type="Texture2D" uid="uid://cktjmd4b3fxyl" path="res://actors/food/variants/QuimbolitoBien.png" id="10_ri721"]
+[ext_resource type="Texture2D" uid="uid://cx6xs6ql2evcd" path="res://actors/food/variants/SalchiBien.png" id="12_bi26q"]
+[ext_resource type="Texture2D" uid="uid://cgmu7rrl4w8da" path="res://actors/food/variants/TripaBien.png" id="14_vhn6u"]
 
 [sub_resource type="Resource" id="Resource_skhy6"]
 script = ExtResource("1_pks4x")
-text = "Mi Rey"
+text = "¡Mi Rey!"
 cool_down = 5.0
 
 [sub_resource type="Resource" id="Resource_2sxip"]
 script = ExtResource("1_pks4x")
-text = "Guapo"
+text = "¡Veci!"
 cool_down = 10.0
 
 [sub_resource type="Resource" id="Resource_5bhog"]
 script = ExtResource("1_pks4x")
-text = "Reinita"
+text = "¡Reina!"
 cool_down = 7.0
 
 [sub_resource type="Resource" id="Resource_571sb"]
 script = ExtResource("1_pks4x")
-text = "Hermosa"
+text = "¡Hermosa!"
 cool_down = 15.0
 
 [sub_resource type="Resource" id="Resource_qtnsd"]
 script = ExtResource("1_pks4x")
-text = "Tesoro"
+text = "¡Joven!"
 cool_down = 20.0
 
 [sub_resource type="Resource" id="Resource_ngu1t"]
@@ -46,30 +51,35 @@ script = ExtResource("3_1iw7l")
 eat_profit = 2
 spawn_cost = 1
 spawn_scene = ExtResource("5_3egql")
+texture = ExtResource("6_fg0s7")
 
 [sub_resource type="Resource" id="Resource_2v0wx"]
 script = ExtResource("3_1iw7l")
 eat_profit = 2
 spawn_cost = 1
 spawn_scene = ExtResource("6_fcqtb")
+texture = ExtResource("8_71b4k")
 
 [sub_resource type="Resource" id="Resource_jc0fg"]
 script = ExtResource("3_1iw7l")
 eat_profit = 2
 spawn_cost = 1
 spawn_scene = ExtResource("7_id8l2")
+texture = ExtResource("10_ri721")
 
 [sub_resource type="Resource" id="Resource_0embl"]
 script = ExtResource("3_1iw7l")
 eat_profit = 2
 spawn_cost = 1
 spawn_scene = ExtResource("8_mqy4j")
+texture = ExtResource("12_bi26q")
 
 [sub_resource type="Resource" id="Resource_jt1l7"]
 script = ExtResource("3_1iw7l")
 eat_profit = 2
 spawn_cost = 1
 spawn_scene = ExtResource("9_sqgnt")
+texture = ExtResource("14_vhn6u")
 
 [resource]
 script = ExtResource("1_6xq7d")

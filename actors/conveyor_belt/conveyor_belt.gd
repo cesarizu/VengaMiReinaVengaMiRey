@@ -55,7 +55,7 @@ func _on_food_thrown(tray: Node2D, food: Food):
 
 	var tween := get_tree().create_tween()
 	tween.tween_property(tray, "position", tray.position + Vector2.DOWN * 500, 1)
-	GameManager.food_thrown(food.food_info)
+	GameManager.notify_food_thrown(food)
 	_trays.erase(tray)
 	
 	for a in _trays.size():
