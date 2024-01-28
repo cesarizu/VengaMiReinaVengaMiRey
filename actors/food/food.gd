@@ -27,9 +27,7 @@ func _physics_process(delta: float) -> void:
 		_update_hold_and_direction()
 
 	if _throw_force != Vector2.ZERO:
-		apply_central_impulse(-_throw_force)
-		_throw_force = Vector2.ZERO
-		thrown.emit()
+		_throw()
 
 
 func _input(event: InputEvent) -> void:
@@ -46,7 +44,6 @@ func _update_hold():
 	_direction.visible = _holding
 
 	if not _holding:
-		freeze = false
 		_throw_force = -_throw_velocity
 
 		
@@ -69,6 +66,7 @@ func _update_hold_and_direction():
 
 
 func _throw():
+	print("_throw")
 	freeze = false
 	apply_central_impulse(-_throw_force)
 	_throw_force = Vector2.ZERO

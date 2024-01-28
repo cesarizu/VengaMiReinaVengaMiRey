@@ -102,6 +102,7 @@ func notify_client_patience_ended(client: Client):
 
 
 func notify_food_thrown(food: Food):
+	print("FT:", _current_food_count)
 	_current_food_count -= 1
 	food_thrown.emit(food)
 
@@ -131,6 +132,7 @@ func _on_client_timer_timeout():
 
 
 func _on_food_timer_timeout():
+	print("TT:", _current_food_count)
 	if _current_food_count < config.food_spawn_max:
 		spawn_food.emit(config.food_info.pick_random())
 		_current_food_count += 1
