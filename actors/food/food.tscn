@@ -52,4 +52,12 @@ visible = false
 texture = ExtResource("2_3mlf1")
 metadata/_edit_lock_ = true
 
+[node name="SfxThrown" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efectos"
+
+[node name="SfxHit" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efectos"
+
+[connection signal="body_entered" from="." to="SfxHit" method="play"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="thrown" from="." to="SfxThrown" method="play"]

@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://b1vqt3lbp68wp"]
+[gd_scene load_steps=3 format=3 uid="uid://b1vqt3lbp68wp"]
+
+[ext_resource type="Script" path="res://autoloads/audio_manager.gd" id="1_1myaa"]
+[ext_resource type="AudioStream" uid="uid://u8bv4hrgrfkq" path="res://audios/Música Menu.ogg" id="2_8fu2l"]
 
 [node name="AudioManager" type="Node"]
+script = ExtResource("1_1myaa")
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_8fu2l")
+bus = &"Musica"
+
+[node name="MusicaJuego" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Musica"

@@ -5,6 +5,9 @@ signal spawn_client(client_info)
 signal spawn_food(food_info)
 signal food_thrown(food)
 signal food_hit(client, food_info, good)
+signal game_started
+signal game_ended
+
 
 var config: GameConfig = preload("res://config/game_config.tres")
 
@@ -45,11 +48,13 @@ func start_game():
 	_money_current = config.initial_money
 	_client_timer.start()
 	_food_timer.start()
+	game_started.emit()
 
 
 func end_game():
 	_client_timer.stop()
 	_food_timer.stop()
+	game_ended.emit()
 
 
 func client_spawned(client: Client):

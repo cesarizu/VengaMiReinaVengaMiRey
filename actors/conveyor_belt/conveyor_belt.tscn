@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://crwvhds77e4f5" path="res://actors/conveyor_belt/FiloBanda.png" id="2_genhj"]
 [ext_resource type="Texture2D" uid="uid://cusd6ufansoe4" path="res://actors/conveyor_belt/BandaTres.png" id="2_yyyv1"]
 
+[sub_resource type="Animation" id="Animation_uari7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Belt:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 1920, 388)]
+}
+
 [sub_resource type="Animation" id="Animation_xnnwx"]
 resource_name = "run"
 length = 5.0
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Rect2(0, 0, 1920, 388), Rect2(1196, 0, 1920, 388)]
-}
-
-[sub_resource type="Animation" id="Animation_uari7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Belt:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 1920, 388)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_inex4"]
@@ -98,3 +98,7 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 position = Vector2(2112, 940)
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"Efectos"
