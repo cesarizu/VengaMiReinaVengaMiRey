@@ -6,6 +6,7 @@ var tween: Tween
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var food: Sprite2D = %Food
+@onready var area: Area2D = %Area2D
 
 
 func approach(food_info: FoodInfo):
@@ -41,3 +42,13 @@ func move_to(new_position: Vector2):
 
 	tween = get_tree().create_tween()
 	tween.tween_property(self, "position", new_position, 0.005 * distance / client_info.speed_multiplier)
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, food: Food, body_shape_index: int, local_shape_index: int) -> void:
+	if food and food.z_index <= 0:
+		var shape := area.shape_owner_get_owner(local_shape_index)
+		var is_mouth: bool = shape.get_meta("mouth")
+
+		if is_mouth or food.can_collide_sad:
+			GameManager.notify_food_hit(self, food.food_info, is_mouth)
+			food.queue_free()

@@ -4,6 +4,7 @@ signal on_money_updated(money)
 signal spawn_client(client_info)
 signal spawn_food(food_info)
 signal food_thrown(food)
+signal food_hit(client, food_info, good)
 
 var config: GameConfig = preload("res://config/game_config.tres")
 
@@ -77,9 +78,10 @@ func notify_food_thrown(food: Food):
 	food_thrown.emit(food)
 
 
-func food_hit(food_info: FoodInfo, good: bool):
+func notify_food_hit(client: Client, food_info: FoodInfo, good: bool):
 	if good:
 		_money_current += food_info.eat_profit
+	food_hit.emit(client, food_info, good)
 
 
 func _update_waiting_client_z_indexes():

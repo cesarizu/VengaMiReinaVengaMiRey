@@ -70,27 +70,27 @@ region_rect = Rect2(0, 0, 1920, 74)
 metadata/_edit_lock_ = true
 
 [node name="Marker2D_1" type="Marker2D" parent="."]
-position = Vector2(192, 940)
+position = Vector2(174, 940)
 scale = Vector2(1, 2.42969)
 metadata/_edit_lock_ = true
 
 [node name="Marker2D_2" type="Marker2D" parent="."]
-position = Vector2(576, 940)
+position = Vector2(522, 940)
 scale = Vector2(1, 2.42969)
 metadata/_edit_lock_ = true
 
 [node name="Marker2D_3" type="Marker2D" parent="."]
-position = Vector2(960, 940)
+position = Vector2(870, 940)
 scale = Vector2(1, 2.42969)
 metadata/_edit_lock_ = true
 
 [node name="Marker2D_4" type="Marker2D" parent="."]
-position = Vector2(1344, 940)
+position = Vector2(1218, 940)
 scale = Vector2(1, 2.42969)
 metadata/_edit_lock_ = true
 
 [node name="Marker2D_5" type="Marker2D" parent="."]
-position = Vector2(1728, 940)
+position = Vector2(1566, 940)
 scale = Vector2(1, 2.42969)
 metadata/_edit_lock_ = true
 

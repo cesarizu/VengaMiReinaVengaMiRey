@@ -27,6 +27,8 @@ func _on_spawn_food(food_info: FoodInfo):
 	
 	var food: Food = food_info.spawn_scene.instantiate()
 	food.food_info = food_info
+	food.position = Vector2.UP * 40
+	food.z_index = 1
 	food.thrown.connect(_on_food_thrown.bind(tray, food))
 	tray.add_child(food)
 	
@@ -55,7 +57,6 @@ func _on_food_thrown(tray: Node2D, food: Food):
 
 	var tween := get_tree().create_tween()
 	tween.tween_property(tray, "position", tray.position + Vector2.DOWN * 500, 1)
-	GameManager.notify_food_thrown(food)
 	_trays.erase(tray)
 	
 	for a in _trays.size():

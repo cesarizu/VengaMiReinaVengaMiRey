@@ -7,6 +7,7 @@ const right := Vector2(1920 + 200, 700)
 func _ready():
 	GameManager.spawn_client.connect(_on_spawn_client)
 	GameManager.food_thrown.connect(_on_food_thrown)
+	GameManager.food_hit.connect(_on_food_hit)
 	GameManager.start_game()
 
 
@@ -34,4 +35,13 @@ func _on_spawn_client(client_info: ClientInfo):
 
 
 func _on_food_thrown(food: Food):
-	pass
+	food.reparent(self)
+
+
+func _on_food_hit(client: Client, food_info: FoodInfo, good: bool):
+	var exit_position := left if randf() > 0.5 else right
+
+	if good:
+		client.walk_happy_to(exit_position)
+	else:
+		client.walk_happy_to(exit_position)
