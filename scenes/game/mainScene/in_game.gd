@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-const left := Vector2(-200, 700)
-const right := Vector2(1920 + 200, 700)
+const left := Vector2(-200, 600)
+const right := Vector2(1920 + 200, 600)
 
 
 func _ready():
@@ -28,7 +28,7 @@ func _on_spawn_client(client_info: ClientInfo):
 	client.z_index = -50
 	add_child(client)
 	
-	client.walk_happy_to(right if face_left else left, )
+	client.walk_happy_to(right if face_left else left, false)
 
 	GameManager.client_spawned(client)
 	await client.tween.finished
@@ -40,10 +40,7 @@ func _on_food_thrown(food: Food):
 	food.reparent(self)
 
 
-func _on_food_hit(client: Client, food_info: FoodInfo, good: bool):
+func _on_food_hit(client: Client, food_info: FoodInfo, very_happy: bool):
 	var exit_position := left if randf() > 0.5 else right
 
-	if good:
-		client.walk_happy_to(exit_position)
-	else:
-		client.walk_happy_to(exit_position)
+	client.walk_happy_to(exit_position, very_happy)

@@ -1,11 +1,11 @@
 extends Node
 
-signal on_money_updated(money)
 signal spawn_client(client_info)
 signal spawn_food(food_info)
 signal food_thrown(food)
 signal food_hit(client, food_info, good)
 signal game_started
+signal money_updated(money)
 signal game_ended
 
 
@@ -19,7 +19,7 @@ var _highScore = 0
 var _money_current := 50:
 	set(value):
 		_money_current = value
-		on_money_updated.emit(value)
+		money_updated.emit(value)
 
 
 var _client_timer: Timer
@@ -49,6 +49,7 @@ func start_game():
 	_client_timer.start()
 	_food_timer.start()
 	game_started.emit()
+	money_updated.emit(_money_current)
 
 
 func end_game():
@@ -88,9 +89,14 @@ func notify_food_thrown(food: Food):
 	food_thrown.emit(food)
 
 
-func notify_food_hit(client: Client, food_info: FoodInfo, good: bool):
+func notify_food_hit(client: Client, food_info: FoodInfo):
+	var good := food_info == client.food_info
+
 	if good:
+		_money_current += food_info.eat_profit * 2
+	else:
 		_money_current += food_info.eat_profit
+
 	food_hit.emit(client, food_info, good)
 
 

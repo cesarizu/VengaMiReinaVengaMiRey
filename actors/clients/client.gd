@@ -10,8 +10,11 @@ var tween: Tween
 @onready var happy_hearts: AnimatedSprite2D = %HappyHearts
 @onready var splash: AnimatedSprite2D = %Splash
 
+var food_info: FoodInfo
 
-func approach(food_info: FoodInfo):
+
+func approach(food_info_: FoodInfo):
+	food_info = food_info_
 	z_index = -1
 
 	walk_happy_to(position + Vector2.DOWN * 100)
@@ -23,7 +26,8 @@ func approach(food_info: FoodInfo):
 	food.show()
 
 
-func walk_happy_to(new_position: Vector2):
+func walk_happy_to(new_position: Vector2, very_happy := false):
+	happy_hearts.visible = very_happy
 	animation_player.play(&"walking_happy")
 	move_to(new_position)
 
@@ -47,13 +51,13 @@ func move_to(new_position: Vector2):
 
 
 func _on_area_2d_body_shape_entered(body_rid: RID, food: Food, body_shape_index: int, local_shape_index: int) -> void:
-	if food and food.z_index <= 0:
-		var shape := area.shape_owner_get_owner(local_shape_index)
-		print(shape)
-		var is_mouth: bool = shape == %Mouth
+	if not food or food.z_index > 0:
+		return
 
-		if is_mouth or food.can_collide_sad:
-			happy_hearts.visible = is_mouth
-			splash.visible = not is_mouth
-			GameManager.notify_food_hit(self, food.food_info, is_mouth)
-			food.queue_free()
+	var shape := area.shape_owner_get_owner(local_shape_index)
+	var is_mouth: bool = shape == %Mouth
+	print(shape.name)
+
+	splash.visible = not is_mouth
+	GameManager.notify_food_hit(self, food.food_info)
+	food.queue_free()

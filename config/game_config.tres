@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameConfig" load_steps=29 format=3 uid="uid://bw3qhgd0kg1eq"]
+[gd_resource type="Resource" script_class="GameConfig" load_steps=35 format=3 uid="uid://bw3qhgd0kg1eq"]
 
 [ext_resource type="Script" path="res://config/game_config.gd" id="1_6xq7d"]
 [ext_resource type="Script" path="res://config/client_info.gd" id="1_imefv"]
@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c15y2ssm6xlg6" path="res://actors/clients/variants/client_1.tscn" id="3_wsjo7"]
 [ext_resource type="PackedScene" uid="uid://dvjgd8bc0tfql" path="res://actors/clients/variants/client_2.tscn" id="4_g2ivx"]
 [ext_resource type="PackedScene" uid="uid://b8l7dtomjumns" path="res://actors/food/variants/humita.tscn" id="5_3egql"]
+[ext_resource type="PackedScene" uid="uid://bem5xtvygww2a" path="res://actors/clients/variants/client_3.tscn" id="5_wk46m"]
 [ext_resource type="PackedScene" uid="uid://30uog14r41kv" path="res://actors/food/variants/locro.tscn" id="6_fcqtb"]
 [ext_resource type="Texture2D" uid="uid://bfdwn7dafgenw" path="res://actors/food/variants/HumitaBien.png" id="6_fg0s7"]
+[ext_resource type="PackedScene" uid="uid://1evkkepkev80" path="res://actors/clients/variants/client_4.tscn" id="6_iu180"]
+[ext_resource type="PackedScene" uid="uid://che0vamlxhkp7" path="res://actors/clients/variants/client_5.tscn" id="7_dbeqg"]
 [ext_resource type="PackedScene" uid="uid://bcyaf8befece7" path="res://actors/food/variants/quimbolito.tscn" id="7_id8l2"]
 [ext_resource type="Texture2D" uid="uid://do4o4sktkdyqt" path="res://actors/food/variants/Locrobien.png" id="8_71b4k"]
 [ext_resource type="PackedScene" uid="uid://bf7mpqo2ver7x" path="res://actors/food/variants/salchi.tscn" id="8_mqy4j"]
@@ -51,6 +54,21 @@ spawn_scene = ExtResource("3_wsjo7")
 script = ExtResource("1_imefv")
 speed_multiplier = 1.0
 spawn_scene = ExtResource("4_g2ivx")
+
+[sub_resource type="Resource" id="Resource_qpawg"]
+script = ExtResource("1_imefv")
+speed_multiplier = 1.0
+spawn_scene = ExtResource("5_wk46m")
+
+[sub_resource type="Resource" id="Resource_0tnuj"]
+script = ExtResource("1_imefv")
+speed_multiplier = 1.0
+spawn_scene = ExtResource("6_iu180")
+
+[sub_resource type="Resource" id="Resource_b2gxi"]
+script = ExtResource("1_imefv")
+speed_multiplier = 1.0
+spawn_scene = ExtResource("7_dbeqg")
 
 [sub_resource type="Resource" id="Resource_ienkd"]
 script = ExtResource("3_1iw7l")
@@ -95,5 +113,5 @@ food_spawn_max = 5
 food_info = Array[ExtResource("3_1iw7l")]([SubResource("Resource_ienkd"), SubResource("Resource_2v0wx"), SubResource("Resource_jc0fg"), SubResource("Resource_0embl"), SubResource("Resource_jt1l7")])
 client_spawn_interval = 5.0
 client_spawn_max = 8
-client_info = Array[ExtResource("1_imefv")]([SubResource("Resource_ngu1t"), SubResource("Resource_1mmyy")])
+client_info = Array[ExtResource("1_imefv")]([SubResource("Resource_ngu1t"), SubResource("Resource_1mmyy"), SubResource("Resource_qpawg"), SubResource("Resource_0tnuj"), SubResource("Resource_b2gxi")])
 call_info = Array[ExtResource("1_pks4x")]([SubResource("Resource_skhy6"), SubResource("Resource_2sxip"), SubResource("Resource_5bhog"), SubResource("Resource_571sb"), SubResource("Resource_qtnsd")])

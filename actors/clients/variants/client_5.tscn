@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://che0vamlxhkp7"]
+[gd_scene load_steps=10 format=3 uid="uid://che0vamlxhkp7"]
 
 [ext_resource type="PackedScene" uid="uid://k3timswbiij8" path="res://actors/clients/client.tscn" id="1_7ecpx"]
 [ext_resource type="Texture2D" uid="uid://cg3iaoga1u0jh" path="res://actors/clients/spriteCharacters.png" id="2_v4gec"]
@@ -57,6 +57,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oh6on"]
+radius = 53.0
+height = 190.0
+
 [node name="Client" instance=ExtResource("1_7ecpx")]
 
 [node name="Torso" parent="." index="1"]
@@ -68,3 +72,10 @@ sprite_frames = SubResource("SpriteFrames_5j508")
 [node name="Food" parent="Torso/Head" index="0"]
 visible = true
 position = Vector2(52, -35)
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(-1.52588e-05, 39.5)
+
+[node name="Body" parent="Area2D" index="1"]
+position = Vector2(-3, 19)
+shape = SubResource("CapsuleShape2D_oh6on")

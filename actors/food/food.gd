@@ -8,11 +8,8 @@ signal thrown
 
 @onready var _hold: Sprite2D = %Hold
 @onready var _direction: Line2D = %Direction
-@onready var _original_collision_layer := collision_layer
 
 var food_info: FoodInfo
-
-var can_collide_sad := false
 
 var _holding := false
 var _throw_velocity := Vector2.ZERO
@@ -75,6 +72,7 @@ func _update_hold_and_direction():
 			vel += Vector2.DOWN * 980 * simlation_step_time
 			pos += vel * simlation_step_time
 
+
 func _throw():
 	freeze = false
 	apply_central_impulse(-_throw_force)
@@ -83,9 +81,3 @@ func _throw():
 
 	GameManager.notify_food_thrown(self)
 	thrown.emit()
-
-	collision_layer = 0
-	await get_tree().create_timer(0.5).timeout
-	collision_layer = _original_collision_layer
-	await get_tree().create_timer(0.5).timeout
-	can_collide_sad = true

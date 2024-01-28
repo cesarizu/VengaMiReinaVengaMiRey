@@ -229,11 +229,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_reye8"]
-radius = 129.059
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_vdi7n"]
 radius = 46.2385
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cit3q"]
+radius = 87.0
+height = 248.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7pwo"]
 atlas = ExtResource("4_7jwxo")
@@ -421,14 +422,14 @@ texture = ExtResource("3_01m3d")
 unique_name_in_owner = true
 monitoring = false
 
-[node name="Head" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -184)
-shape = SubResource("CircleShape2D_reye8")
-
 [node name="Mouth" type="CollisionShape2D" parent="Area2D" groups=["mouth"]]
 unique_name_in_owner = true
 position = Vector2(0, -133)
 shape = SubResource("CircleShape2D_vdi7n")
+
+[node name="Body" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 47)
+shape = SubResource("CapsuleShape2D_cit3q")
 
 [node name="HappyHearts" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
