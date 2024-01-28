@@ -3,38 +3,38 @@
 [ext_resource type="PackedScene" uid="uid://k3timswbiij8" path="res://actors/clients/client.tscn" id="1_7ecpx"]
 [ext_resource type="Texture2D" uid="uid://cg3iaoga1u0jh" path="res://actors/clients/spriteCharacters.png" id="2_v4gec"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tevx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mio2g"]
 atlas = ExtResource("2_v4gec")
-region = Rect2(1192, 711, 298, 237)
+region = Rect2(1200, 786, 300, 314)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4gj1n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8tevx")
+"texture": SubResource("AtlasTexture_mio2g")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_stdln"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf3db"]
 atlas = ExtResource("2_v4gec")
-region = Rect2(1192, 237, 298, 237)
+region = Rect2(1200, 262, 300, 262)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8m1h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2ocs"]
 atlas = ExtResource("2_v4gec")
-region = Rect2(1192, 0, 298, 237)
+region = Rect2(1200, 0, 300, 262)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ruqpa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yycb"]
 atlas = ExtResource("2_v4gec")
-region = Rect2(1192, 474, 298, 237)
+region = Rect2(1200, 524, 300, 262)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5j508"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_stdln")
+"texture": SubResource("AtlasTexture_nf3db")
 }],
 "loop": true,
 "name": &"happy",
@@ -42,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c8m1h")
+"texture": SubResource("AtlasTexture_p2ocs")
 }],
 "loop": true,
 "name": &"open",
@@ -50,7 +50,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ruqpa")
+"texture": SubResource("AtlasTexture_8yycb")
 }],
 "loop": true,
 "name": &"sad",
@@ -64,7 +64,6 @@ sprite_frames = SubResource("SpriteFrames_4gj1n")
 
 [node name="Head" parent="Torso" index="0"]
 sprite_frames = SubResource("SpriteFrames_5j508")
-animation = &"sad"
 
 [node name="Food" parent="Torso/Head" index="0"]
 visible = true

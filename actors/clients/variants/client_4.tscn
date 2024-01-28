@@ -3,38 +3,38 @@
 [ext_resource type="PackedScene" uid="uid://k3timswbiij8" path="res://actors/clients/client.tscn" id="1_wlrop"]
 [ext_resource type="Texture2D" uid="uid://cg3iaoga1u0jh" path="res://actors/clients/spriteCharacters.png" id="2_yythx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwby6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwkxl"]
 atlas = ExtResource("2_yythx")
-region = Rect2(894, 711, 298, 237)
+region = Rect2(900, 786, 300, 314)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0aijr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iwby6")
+"texture": SubResource("AtlasTexture_nwkxl")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0wfwo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt1ar"]
 atlas = ExtResource("2_yythx")
-region = Rect2(894, 237, 298, 237)
+region = Rect2(900, 262, 300, 262)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkths"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7qyx"]
 atlas = ExtResource("2_yythx")
-region = Rect2(894, 0, 298, 237)
+region = Rect2(900, 0, 300, 262)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r8ov8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgfcf"]
 atlas = ExtResource("2_yythx")
-region = Rect2(894, 474, 298, 237)
+region = Rect2(900, 524, 300, 262)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ou4r3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0wfwo")
+"texture": SubResource("AtlasTexture_vt1ar")
 }],
 "loop": true,
 "name": &"happy",
@@ -42,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rkths")
+"texture": SubResource("AtlasTexture_u7qyx")
 }],
 "loop": true,
 "name": &"open",
@@ -50,7 +50,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r8ov8")
+"texture": SubResource("AtlasTexture_mgfcf")
 }],
 "loop": true,
 "name": &"sad",
@@ -64,4 +64,3 @@ sprite_frames = SubResource("SpriteFrames_0aijr")
 
 [node name="Head" parent="Torso" index="0"]
 sprite_frames = SubResource("SpriteFrames_ou4r3")
-animation = &"sad"

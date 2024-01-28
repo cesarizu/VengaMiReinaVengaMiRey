@@ -207,38 +207,38 @@ _data = {
 "walking_sad": SubResource("Animation_k82sg")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vykb0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v17ow"]
 atlas = ExtResource("3_x7i81")
-region = Rect2(0, 711, 373, 237)
+region = Rect2(0, 786, 300, 314)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1ik6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vykb0")
+"texture": SubResource("AtlasTexture_v17ow")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wk7ha"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bpda"]
 atlas = ExtResource("3_x7i81")
-region = Rect2(0, 237, 298, 237)
+region = Rect2(0, 262, 300, 262)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lv24l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy7di"]
 atlas = ExtResource("3_x7i81")
-region = Rect2(0, 0, 298, 237)
+region = Rect2(0, 0, 300, 262)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddrqy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6vj4"]
 atlas = ExtResource("3_x7i81")
-region = Rect2(0, 474, 298, 237)
+region = Rect2(0, 524, 300, 262)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bnovq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wk7ha")
+"texture": SubResource("AtlasTexture_1bpda")
 }],
 "loop": true,
 "name": &"happy",
@@ -246,7 +246,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lv24l")
+"texture": SubResource("AtlasTexture_xy7di")
 }],
 "loop": true,
 "name": &"open",
@@ -254,7 +254,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ddrqy")
+"texture": SubResource("AtlasTexture_r6vj4")
 }],
 "loop": true,
 "name": &"sad",
