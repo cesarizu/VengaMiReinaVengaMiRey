@@ -48,6 +48,18 @@ func _ready() -> void:
 	add_child(_food_timer)
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
+
+	if event.is_action_pressed("full_screen"):
+		var current_mode = get_window().mode
+		if current_mode == Window.MODE_EXCLUSIVE_FULLSCREEN or current_mode == Window.MODE_FULLSCREEN:
+			get_window().mode = Window.MODE_WINDOWED
+		else:
+			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
+
+
 func start_game():
 	_money_current = config.initial_money
 	_client_timer.start()
@@ -107,7 +119,6 @@ func notify_client_patience_ended(client: Client):
 
 
 func notify_food_thrown(food: Food):
-	print("FT:", _current_food_count)
 	_current_food_count -= 1
 	food_thrown.emit(food)
 
