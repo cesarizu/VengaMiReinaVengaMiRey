@@ -116,6 +116,9 @@ func notify_client_patience_ended(client: Client):
 	_waiting_clients.erase(client)
 	_update_waiting_client_z_indexes()
 	client_patience_ended.emit(client)
+	_failed += 1
+	if _failed > 10:
+		end_game()
 
 
 func notify_food_thrown(food: Food):
@@ -135,6 +138,8 @@ func notify_food_hit(client: Client, food_info: FoodInfo):
 	
 	_waiting_clients.erase(client)
 	client.z_index = -49
+
+	_achieved += 1
 
 
 func _update_waiting_client_z_indexes():

@@ -8,7 +8,7 @@ touch upload/.gdignore
 
 git archive --format=zip --output upload/src.zip main
 
-cp -r release/*.exe upload/
+zip upload/game.zip -r release/*.exe
 
 cp license.txt upload/
 
