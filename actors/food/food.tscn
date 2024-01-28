@@ -11,8 +11,7 @@ max_value = 5.0
 _data = [Vector2(0, 2.76122), 0.0, 0.0, 0, 0, Vector2(1, 0.998037), -4.62249, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_b016d"]
-colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 0)
+[sub_resource type="Gradient" id="Gradient_cqstb"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dip7d"]
 
@@ -31,7 +30,9 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 points = PackedVector2Array(0, 0, 85, -149, 235, -268, 408, -336, 623, -361, 800, -319, 895, -266)
 width_curve = SubResource("Curve_cya2f")
-gradient = SubResource("Gradient_b016d")
+gradient = SubResource("Gradient_cqstb")
+texture = ExtResource("2_3mlf1")
+texture_mode = 1
 
 [node name="Hold" type="Sprite2D" parent="."]
 unique_name_in_owner = true

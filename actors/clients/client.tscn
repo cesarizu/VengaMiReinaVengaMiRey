@@ -472,25 +472,23 @@ libraries = {
 autoplay = "walking_happy"
 
 [node name="Torso" type="AnimatedSprite2D" parent="."]
-position = Vector2(-11, -134)
+position = Vector2(0, -134)
 sprite_frames = SubResource("SpriteFrames_p1ik6")
 
 [node name="Head" type="AnimatedSprite2D" parent="Torso"]
-position = Vector2(0, -195.5)
+position = Vector2(0, -257)
 sprite_frames = SubResource("SpriteFrames_bnovq")
 animation = &"happy"
 
 [node name="HappyHearts" type="AnimatedSprite2D" parent="Torso/Head"]
 unique_name_in_owner = true
-visible = false
-position = Vector2(6, -123.5)
+position = Vector2(0, -123.5)
 sprite_frames = SubResource("SpriteFrames_sgbr7")
 autoplay = "default"
 frame_progress = 0.770862
 
 [node name="Splash" type="AnimatedSprite2D" parent="Torso/Head"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(6, 7.5)
 sprite_frames = SubResource("SpriteFrames_psnbs")
 autoplay = "default"
