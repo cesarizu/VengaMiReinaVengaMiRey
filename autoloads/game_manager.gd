@@ -4,6 +4,7 @@ signal spawn_client(client_info)
 signal spawn_food(food_info)
 signal food_thrown(food)
 signal food_hit(client, food_info, good)
+signal client_patience_ended(client)
 signal game_started
 signal money_updated(money)
 signal game_ended
@@ -63,12 +64,20 @@ func client_spawned(client: Client):
 
 
 func call_client(call_info: CallInfo) -> bool:
-	if _passing_clients.is_empty():
+	# TODO solo llamar a los que corresponde (e.g. "Mi rey" que llame solo a señores)
+	var visible_clients := _passing_clients.filter(func(c): return c.position.x > 150 and c.position.x < 1400)
+
+	if visible_clients.is_empty():
 		return false
 
-	# TODO solo llamar a los que corresponde (e.g. "Mi rey" que llame solo a señores)
-	_passing_clients.shuffle()
-	_passing_clients.pop_back().approach(config.food_info.pick_random())
+	visible_clients.shuffle()
+
+	var selected: Client = visible_clients.pop_back()
+	selected.approach(config.food_info.pick_random())
+	_passing_clients.erase(selected)
+	
+	_update_waiting_client_z_indexes()
+
 	return true
 
 
@@ -82,6 +91,12 @@ func client_left(client: Client):
 	_passing_clients.erase(client)
 	_waiting_clients.erase(client)
 	_update_waiting_client_z_indexes()
+
+
+func notify_client_patience_ended(client: Client):
+	_waiting_clients.erase(client)
+	_update_waiting_client_z_indexes()
+	client_patience_ended.emit(client)
 
 
 func notify_food_thrown(food: Food):
@@ -98,6 +113,9 @@ func notify_food_hit(client: Client, food_info: FoodInfo):
 		_money_current += food_info.eat_profit
 
 	food_hit.emit(client, food_info, good)
+	
+	_waiting_clients.erase(client)
+	client.z_index = -49
 
 
 func _update_waiting_client_z_indexes():

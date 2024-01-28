@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://k3timswbiij8"]
+[gd_scene load_steps=42 format=3 uid="uid://k3timswbiij8"]
 
 [ext_resource type="Script" path="res://actors/clients/client.gd" id="1_ubts6"]
 [ext_resource type="Texture2D" uid="uid://bfdwn7dafgenw" path="res://actors/food/variants/HumitaBien.png" id="3_01m3d"]
+[ext_resource type="Texture2D" uid="uid://cghla5rh1whf" path="res://actors/clients/BurbujaPedido.png" id="3_kryjn"]
 [ext_resource type="Texture2D" uid="uid://cg3iaoga1u0jh" path="res://actors/clients/spriteCharacters.png" id="3_x7i81"]
 [ext_resource type="Texture2D" uid="uid://d0lsa6xittjpp" path="res://actors/clients/SpriteHeartanimation.png" id="4_7jwxo"]
 [ext_resource type="Texture2D" uid="uid://id7mjr8wot3t" path="res://actors/clients/splashSprite.png" id="5_kmqpv"]
@@ -389,7 +390,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [node name="Client" type="Node2D"]
@@ -411,10 +412,26 @@ position = Vector2(0, -195.5)
 sprite_frames = SubResource("SpriteFrames_bnovq")
 animation = &"happy"
 
-[node name="Food" type="Sprite2D" parent="Torso/Head"]
+[node name="Bubble" type="Sprite2D" parent="Torso/Head"]
 unique_name_in_owner = true
-visible = false
-position = Vector2(122, -107.5)
+position = Vector2(179, -94)
+scale = Vector2(1, 1)
+texture = ExtResource("3_kryjn")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Torso/Head/Bubble"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.447059, 0.380392, 1)
+offset_left = -80.0
+offset_top = -68.0
+offset_right = 83.0
+offset_bottom = 71.0
+max_value = 1.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("3_kryjn")
+
+[node name="Food" type="Sprite2D" parent="Torso/Head/Bubble"]
+unique_name_in_owner = true
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("3_01m3d")
 

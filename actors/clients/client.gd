@@ -5,12 +5,32 @@ var client_info: ClientInfo
 var tween: Tween
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var bubble: Sprite2D = %Bubble
 @onready var food: Sprite2D = %Food
+@onready var progress: TextureProgressBar = %TextureProgressBar
 @onready var area: Area2D = %Area2D
 @onready var happy_hearts: AnimatedSprite2D = %HappyHearts
 @onready var splash: AnimatedSprite2D = %Splash
 
 var food_info: FoodInfo
+
+var _patience_time := 0.0
+var _patience_time_left := 0.0
+
+
+func _ready() -> void:
+	bubble.hide()
+
+
+func _process(delta: float) -> void:
+	if not bubble.visible: return
+	
+	if _patience_time_left > 0:
+		_patience_time_left -= delta
+		progress.value = 1 - _patience_time_left / _patience_time
+	elif _patience_time > 0:
+		GameManager.notify_client_patience_ended(self)
+		_patience_time = 0
 
 
 func approach(food_info_: FoodInfo):
@@ -23,7 +43,10 @@ func approach(food_info_: FoodInfo):
 	animation_player.play(&"waiting")
 
 	food.texture = food_info.texture
-	food.show()
+	bubble.show()
+
+	_patience_time = randf_range(15, 25)
+	_patience_time_left = randf_range(15, 25)
 
 
 func walk_happy_to(new_position: Vector2, very_happy := false):

@@ -69,13 +69,20 @@ sprite_frames = SubResource("SpriteFrames_4gj1n")
 [node name="Head" parent="Torso" index="0"]
 sprite_frames = SubResource("SpriteFrames_5j508")
 
-[node name="Food" parent="Torso/Head" index="0"]
-visible = true
-position = Vector2(52, -35)
+[node name="Bubble" parent="Torso/Head" index="0"]
+position = Vector2(98, -6.00001)
 
 [node name="Area2D" parent="." index="2"]
-position = Vector2(-1.52588e-05, 39.5)
+position = Vector2(-3.05176e-05, 82)
 
 [node name="Body" parent="Area2D" index="1"]
 position = Vector2(-3, 19)
 shape = SubResource("CapsuleShape2D_oh6on")
+
+[node name="HappyHearts" parent="." index="3"]
+position = Vector2(-10, -157)
+
+[node name="Splash" parent="." index="4"]
+position = Vector2(-12, -86)
+frame = 0
+frame_progress = 0.0
