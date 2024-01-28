@@ -22,6 +22,8 @@ var _money_current := 50:
 	set(value):
 		_money_current = value
 		money_updated.emit(value)
+		if value <= 0:
+			end_game()
 
 
 var _client_timer: Timer
@@ -58,6 +60,9 @@ func end_game():
 	_client_timer.stop()
 	_food_timer.stop()
 	game_ended.emit()
+	_lastZ = -1
+
+	get_tree().change_scene_to_file("res://scenes/game/earningsScreen/earnings_screen.tscn")
 
 
 func client_spawned(client: Client):
@@ -132,7 +137,8 @@ func _on_client_timer_timeout():
 
 
 func _on_food_timer_timeout():
-	print("TT:", _current_food_count)
 	if _current_food_count < config.food_spawn_max:
-		spawn_food.emit(config.food_info.pick_random())
+		var food_info: FoodInfo = config.food_info.pick_random()
+		spawn_food.emit(food_info)
 		_current_food_count += 1
+		_money_current -= food_info.spawn_cost

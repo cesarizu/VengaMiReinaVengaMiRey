@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqnuirrdks3pr"]
+[gd_scene load_steps=5 format=3 uid="uid://cqnuirrdks3pr"]
 
 [ext_resource type="Script" path="res://scenes/game/mainScene/in_game.gd" id="1_w6q57"]
 [ext_resource type="Texture2D" uid="uid://c0ixbtiy8w80x" path="res://scenes/game/mainScene/Fondo.png" id="2_vqurn"]
-[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/default_theme.tres" id="3_e8i8n"]
 [ext_resource type="PackedScene" uid="uid://7jo2falmuhh" path="res://actors/conveyor_belt/conveyor_belt.tscn" id="4_ob262"]
 [ext_resource type="PackedScene" uid="uid://uxawds7rycpe" path="res://scenes/game/hud/hud.tscn" id="5_poiqu"]
 
@@ -15,18 +14,7 @@ scale = Vector2(0.989707, 0.976577)
 texture = ExtResource("2_vqurn")
 centered = false
 
-[node name="GameOver" type="Button" parent="."]
-offset_left = 443.0
-offset_top = 14.0
-offset_right = 860.0
-offset_bottom = 157.0
-theme = ExtResource("3_e8i8n")
-theme_type_variation = &"FlatButton"
-text = "Game Over"
-
 [node name="ConveyorBelt" parent="." instance=ExtResource("4_ob262")]
 z_index = 1
 
 [node name="HUD" parent="." instance=ExtResource("5_poiqu")]
-
-[connection signal="pressed" from="GameOver" to="." method="_on_game_over_pressed"]

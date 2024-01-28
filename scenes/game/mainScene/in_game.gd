@@ -12,12 +12,6 @@ func _ready():
 	GameManager.start_game()
 
 
-func _on_game_over_pressed():
-	GameManager.end_game()
-	GameManager._lastZ = -1
-	get_tree().change_scene_to_file("res://scenes/game/earningsScreen/earnings_screen.tscn")
-
-
 func _on_spawn_client(client_info: ClientInfo):
 	var face_left := randf() > 0.5
 	var spawn_position := left if face_left else right
