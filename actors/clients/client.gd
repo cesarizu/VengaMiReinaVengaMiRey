@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 func approach(food_info_: FoodInfo):
 	food_info = food_info_
-	z_index = -1
+	z_index = GameManager._lastZ#IO
 
 	walk_happy_to(position + Vector2.DOWN * 100)
 	await tween.finished
@@ -43,6 +43,7 @@ func approach(food_info_: FoodInfo):
 	animation_player.play(&"waiting")
 
 	food.texture = food_info.texture
+	GameManager._lastZ = GameManager._lastZ -1#IO
 	bubble.show()
 
 	_patience_time = randf_range(15, 25)

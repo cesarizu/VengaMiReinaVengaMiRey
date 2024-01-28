@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://k00xohxst68s"]
+[gd_scene load_steps=6 format=3 uid="uid://k00xohxst68s"]
 
 [ext_resource type="Script" path="res://scenes/mainMenu/mainMenu.gd" id="1_c0jos"]
-[ext_resource type="Texture2D" uid="uid://bjaj2marfkc83" path="res://assets/salchipapas.png" id="2_2ovp2"]
 [ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/default_theme.tres" id="2_74bw5"]
+[ext_resource type="Texture2D" uid="uid://ddqc0fyg05rkj" path="res://scenes/mainMenu/Fondo.png" id="3_apgsr"]
+[ext_resource type="Theme" uid="uid://crsry4ufwitrm" path="res://themes/menu_buttons/botones_menu.tres" id="4_e8tuy"]
+[ext_resource type="Texture2D" uid="uid://bhuv4oulryooa" path="res://scenes/mainMenu/Logo.png" id="5_3c2tj"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_c0jos")
@@ -35,6 +37,7 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 10.0
 
 [node name="backButton" type="Button" parent="."]
+visible = false
 offset_left = 1696.0
 offset_top = 991.0
 offset_right = 1904.0
@@ -45,47 +48,79 @@ theme_override_font_sizes/font_size = 36
 text = "VOLVER"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = -1
-anchor_left = 0.063
-anchor_top = 0.082
-anchor_right = 0.505
-anchor_bottom = 0.923
-offset_left = 0.423996
-offset_top = 13.864
-offset_right = 0.23999
-offset_bottom = -0.104004
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2ovp2")
+texture = ExtResource("3_apgsr")
 expand_mode = 1
 
 [node name="playButton" type="Button" parent="."]
-offset_left = 1302.0
-offset_top = 281.0
-offset_right = 1594.0
-offset_bottom = 419.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = 89.0
+offset_right = 146.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme = ExtResource("2_74bw5")
+theme = ExtResource("4_e8tuy")
 theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 65
 text = "JUGAR"
 
 [node name="optionsButton" type="Button" parent="."]
-offset_left = 1232.0
-offset_top = 432.0
-offset_right = 1651.0
-offset_bottom = 565.0
-theme = ExtResource("2_74bw5")
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 164.0
+offset_right = 141.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_e8tuy")
 theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 50
 text = "OPCIONES"
 
 [node name="creditsButton" type="Button" parent="."]
-offset_left = 1216.0
-offset_top = 584.0
-offset_right = 1675.0
-offset_bottom = 738.0
-theme = ExtResource("2_74bw5")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = 259.0
+offset_right = 135.5
+offset_bottom = 387.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_e8tuy")
 theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 50
 text = "CRÉDITOS"
+
+[node name="Logo" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -579.5
+offset_top = 96.0
+offset_right = 579.5
+offset_bottom = 516.0
+grow_horizontal = 2
+texture = ExtResource("5_3c2tj")
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="playButton" to="." method="_on_play_button_pressed"]

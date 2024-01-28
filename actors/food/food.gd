@@ -27,15 +27,9 @@ func _physics_process(delta: float) -> void:
 		_update_hold_and_direction()
 
 	if _throw_force != Vector2.ZERO:
-		_throw()
-
-	if not freeze:
-		if position.y < 550:
-			# La comida subió lo suficiente para estar detras de la banda transportadora
-			z_index = 0
-		elif z_index <= 0:
-			# La comida cayó lo suficiente y no debe colisionar mas
-			collision_mask = 0
+		apply_central_impulse(-_throw_force)
+		_throw_force = Vector2.ZERO
+		thrown.emit()
 
 
 func _input(event: InputEvent) -> void:
@@ -52,6 +46,7 @@ func _update_hold():
 	_direction.visible = _holding
 
 	if not _holding:
+		freeze = false
 		_throw_force = -_throw_velocity
 
 		

@@ -16,6 +16,7 @@ var price := 10
 var _achieved = 0 #Pedidos entregados
 var _failed = 0 #Pedidos fallados
 var _highScore = 0
+var _lastZ = -1 #Última profundidad
 
 var _money_current := 50:
 	set(value):
