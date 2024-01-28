@@ -65,5 +65,5 @@ sprite_frames = SubResource("SpriteFrames_0aijr")
 [node name="Head" parent="Torso" index="0"]
 sprite_frames = SubResource("SpriteFrames_ou4r3")
 
-[node name="Bubble" parent="Torso/Head" index="0"]
+[node name="Bubble" parent="Torso/Head" index="2"]
 position = Vector2(141, -54)

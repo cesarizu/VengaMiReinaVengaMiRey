@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://k3timswbiij8"]
+[gd_scene load_steps=41 format=3 uid="uid://k3timswbiij8"]
 
 [ext_resource type="Script" path="res://actors/clients/client.gd" id="1_ubts6"]
 [ext_resource type="Texture2D" uid="uid://bfdwn7dafgenw" path="res://actors/food/variants/HumitaBien.png" id="3_01m3d"]
@@ -12,119 +12,90 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Torso:position")
+tracks/0/path = NodePath("Torso/Head/Area2D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.00001, 1.49999)]
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/path = NodePath("Torso:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"happy"]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/path = NodePath("Torso/Head:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_35do7"]
 resource_name = "waiting"
-length = 0.001
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Torso:position")
+tracks/0/path = NodePath("Torso/Head/Area2D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.00001, 1.49999)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Torso/Head:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"open"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_ulvuj"]
-resource_name = "walking_happy"
-length = 0.7
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Torso:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.00001, 1.49999), Vector2(1, -12)]
-}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/path = NodePath("Torso:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"happy"]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/path = NodePath("Torso/Head:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.7),
+"times": PackedFloat32Array(0.001),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/Head:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [&"happy", &"open"]
 }
 
 [sub_resource type="Animation" id="Animation_k82sg"]
@@ -134,38 +105,103 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Torso:position")
+tracks/0/path = NodePath("Torso/Head/Area2D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.00001, 1.49999), Vector2(1, -12)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Torso/Head:animation")
+tracks/1/path = NodePath("Torso:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/Head:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/Head:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"sad"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
+
+[sub_resource type="Animation" id="Animation_ulvuj"]
+resource_name = "walking_happy"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Torso/Head/Area2D:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Torso:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Torso/Head:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Torso/Head:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"happy"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_27pnb"]
@@ -229,13 +265,6 @@ animations = [{
 "name": &"sad",
 "speed": 5.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vdi7n"]
-radius = 46.2385
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cit3q"]
-radius = 87.0
-height = 248.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7pwo"]
 atlas = ExtResource("4_7jwxo")
@@ -393,6 +422,9 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdi7n"]
+radius = 46.2385
+
 [node name="Client" type="Node2D"]
 script = ExtResource("1_ubts6")
 
@@ -404,7 +436,7 @@ libraries = {
 autoplay = "walking_happy"
 
 [node name="Torso" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.00001, 1.49999)
+position = Vector2(-11, -134)
 sprite_frames = SubResource("SpriteFrames_p1ik6")
 
 [node name="Head" type="AnimatedSprite2D" parent="Torso"]
@@ -412,9 +444,25 @@ position = Vector2(0, -195.5)
 sprite_frames = SubResource("SpriteFrames_bnovq")
 animation = &"happy"
 
+[node name="HappyHearts" type="AnimatedSprite2D" parent="Torso/Head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(6, -123.5)
+sprite_frames = SubResource("SpriteFrames_sgbr7")
+autoplay = "default"
+frame_progress = 0.770862
+
+[node name="Splash" type="AnimatedSprite2D" parent="Torso/Head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(6, 7.5)
+sprite_frames = SubResource("SpriteFrames_psnbs")
+autoplay = "default"
+
 [node name="Bubble" type="Sprite2D" parent="Torso/Head"]
 unique_name_in_owner = true
 position = Vector2(179, -94)
+scale = Vector2(1, 1)
 texture = ExtResource("3_kryjn")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Torso/Head/Bubble"]
@@ -434,35 +482,15 @@ unique_name_in_owner = true
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("3_01m3d")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Torso/Head"]
 unique_name_in_owner = true
+position = Vector2(10, 202.5)
 monitoring = false
 
-[node name="Mouth" type="CollisionShape2D" parent="Area2D" groups=["mouth"]]
+[node name="Mouth" type="CollisionShape2D" parent="Torso/Head/Area2D" groups=["mouth"]]
 unique_name_in_owner = true
 position = Vector2(0, -133)
 shape = SubResource("CircleShape2D_vdi7n")
 
-[node name="Body" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(12, 47)
-shape = SubResource("CapsuleShape2D_cit3q")
-
-[node name="HappyHearts" type="AnimatedSprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(-8, -274)
-sprite_frames = SubResource("SpriteFrames_sgbr7")
-autoplay = "default"
-frame_progress = 0.770862
-
-[node name="Splash" type="AnimatedSprite2D" parent="."]
-unique_name_in_owner = true
-visible = false
-position = Vector2(1, -161)
-sprite_frames = SubResource("SpriteFrames_psnbs")
-autoplay = "default"
-frame = 9
-frame_progress = 1.0
-
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
-[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
+[connection signal="body_shape_entered" from="Torso/Head/Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Torso/Head/Area2D" to="." method="_on_area_2d_body_shape_exited"]

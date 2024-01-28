@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-const left := Vector2(-200, 600)
-const right := Vector2(1920 + 200, 600)
+const left := Vector2(-200, 740)
+const right := Vector2(1920 + 200, 740)
 
 
 func _ready():

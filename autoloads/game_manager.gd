@@ -92,6 +92,7 @@ func client_left(client: Client):
 	_passing_clients.erase(client)
 	_waiting_clients.erase(client)
 	_update_waiting_client_z_indexes()
+	client.queue_free()
 
 
 func notify_client_patience_ended(client: Client):

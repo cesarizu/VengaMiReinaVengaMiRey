@@ -67,3 +67,12 @@ sprite_frames = SubResource("SpriteFrames_6o7pu")
 
 [node name="Bubble" parent="Torso/Head" index="0"]
 position = Vector2(129, -69)
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(-3, -142)
+
+[node name="HappyHearts" parent="." index="3"]
+position = Vector2(-9, -409)
+
+[node name="Splash" parent="." index="4"]
+position = Vector2(0, -296)

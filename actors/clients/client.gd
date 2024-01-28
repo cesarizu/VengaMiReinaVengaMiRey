@@ -19,6 +19,8 @@ var _patience_time_left := 0.0
 
 
 func _ready() -> void:
+	happy_hearts.hide()
+	splash.hide()
 	bubble.hide()
 
 
@@ -75,13 +77,18 @@ func move_to(new_position: Vector2):
 
 
 func _on_area_2d_body_shape_entered(body_rid: RID, food: Food, body_shape_index: int, local_shape_index: int) -> void:
-	if not food or food.z_index > 0:
+	if not food:
 		return
 
 	var shape := area.shape_owner_get_owner(local_shape_index)
 	var is_mouth: bool = shape == %Mouth
-	print(shape.name)
+	
+	bubble.hide()
 
-	splash.visible = not is_mouth
-	GameManager.notify_food_hit(self, food.food_info)
+	if is_mouth:
+		GameManager.notify_food_hit(self, food.food_info)
+	else:
+		splash.show()
+		GameManager.notify_client_patience_ended(self)
+	
 	food.queue_free()
