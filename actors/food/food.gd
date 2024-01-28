@@ -80,6 +80,7 @@ func _update_hold_and_direction():
 func _throw():
 	_holding = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_viewport().warp_mouse(global_position)
 	freeze = false
 	apply_central_impulse(-_throw_force)
 	_throw_force = Vector2.ZERO

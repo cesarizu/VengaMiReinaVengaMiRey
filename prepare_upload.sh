@@ -2,25 +2,13 @@
 
 mkdir -p tmp
 
-git archive --format=zip --output tmp/src.zip main
-
 rm -rf upload
-mkdir -p upload/{src,release,press,other}
+mkdir -p upload/
+touch upload/.gdignore
 
-pushd upload
+git archive --format=zip --output upload/src.zip main
 
-pushd src
-unzip ../../tmp/src.zip
-popd
+cp -r release/*.exe upload/
 
-pushd release
-cp -r ../../release/* .
-popd
-
-cp ../license.txt .
-
-popd
-
-rm -f upload.zip
-zip upload.zip -r upload
+cp license.txt upload/
 
