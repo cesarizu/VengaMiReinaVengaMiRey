@@ -9,8 +9,10 @@ script = ExtResource("1_1myaa")
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("2_8fu2l")
+volume_db = -9.0
 bus = &"Musica"
 
 [node name="MusicaJuego" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+volume_db = -9.0
 bus = &"Musica"

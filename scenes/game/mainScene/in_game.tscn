@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game/mainScene/in_game.gd" id="1_w6q57"]
 [ext_resource type="Texture2D" uid="uid://c0ixbtiy8w80x" path="res://scenes/game/mainScene/Fondo.png" id="2_vqurn"]
-[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="3_e8i8n"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/default_theme.tres" id="3_e8i8n"]
 [ext_resource type="PackedScene" uid="uid://7jo2falmuhh" path="res://actors/conveyor_belt/conveyor_belt.tscn" id="4_ob262"]
 [ext_resource type="PackedScene" uid="uid://uxawds7rycpe" path="res://scenes/game/hud/hud.tscn" id="5_poiqu"]
 

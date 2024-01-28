@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/game/earningsScreen/earnings_screen.gd" id="1_h24vq"]
 [ext_resource type="FontFile" uid="uid://bbrprp5tbdsu2" path="res://assets/Kenney Pixel.ttf" id="1_xevcq"]
 [ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="3_hf1mo"]
-[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="3_hmqke"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/default_theme.tres" id="3_hmqke"]
 
 [node name="earningsScreen" type="CanvasLayer"]
 script = ExtResource("1_h24vq")

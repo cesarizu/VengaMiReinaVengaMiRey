@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game/hud/hud.gd" id="1_k86fv"]
 [ext_resource type="Script" path="res://scenes/game/hud/Calls.gd" id="2_2lpoq"]
-[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="4_4jla2"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/default_theme.tres" id="4_4jla2"]
 [ext_resource type="Script" path="res://scenes/game/hud/actual_earnings.gd" id="5_det78"]
 [ext_resource type="FontFile" uid="uid://b6nw23mprfllm" path="res://assets/Margarine-Regular.ttf" id="5_vdyto"]
 [ext_resource type="Texture2D" uid="uid://bghv3phnxob3p" path="res://scenes/game/hud/MoneyBanner.png" id="6_n70cr"]
