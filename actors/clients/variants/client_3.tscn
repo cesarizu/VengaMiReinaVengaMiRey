@@ -18,9 +18,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0siap"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmekq"]
 atlas = ExtResource("2_r0kvr")
-region = Rect2(600, 0, 300, 262)
+region = Rect2(600, 262, 300, 262)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pv0vy"]
 atlas = ExtResource("2_r0kvr")
@@ -34,7 +34,7 @@ region = Rect2(600, 524, 300, 262)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0siap")
+"texture": SubResource("AtlasTexture_dmekq")
 }],
 "loop": true,
 "name": &"happy",

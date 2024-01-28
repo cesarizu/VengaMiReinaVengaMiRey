@@ -17,6 +17,11 @@ var _throw_velocity := Vector2.ZERO
 var _throw_force := Vector2.ZERO
 
 
+func _ready() -> void:
+	_hold.hide()
+	_direction.hide()
+
+
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		_holding = true

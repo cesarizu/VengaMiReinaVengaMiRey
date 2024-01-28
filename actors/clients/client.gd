@@ -81,14 +81,15 @@ func _on_area_2d_body_shape_entered(body_rid: RID, food: Food, body_shape_index:
 		return
 
 	var shape := area.shape_owner_get_owner(local_shape_index)
-	var is_mouth: bool = shape == %Mouth
+	var is_good: bool = food.food_info == food_info
 	
 	bubble.hide()
 
-	if is_mouth:
+	if is_good:
 		GameManager.notify_food_hit(self, food.food_info)
 	else:
 		splash.show()
+		splash.play()
 		GameManager.notify_client_patience_ended(self)
 	
 	food.queue_free()
