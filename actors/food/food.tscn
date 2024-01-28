@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca4q4q84je2xb"]
+[gd_scene load_steps=9 format=3 uid="uid://ca4q4q84je2xb"]
 
 [ext_resource type="Script" path="res://actors/food/food.gd" id="1_08vfs"]
 [ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_3mlf1"]
 [ext_resource type="Texture2D" uid="uid://dyrel12bl843n" path="res://actors/food/bubble.png" id="2_af2jj"]
+[ext_resource type="AudioStream" uid="uid://yxhh64hiavk6" path="res://audios/sfx/lanzarcomida.ogg" id="4_bvukw"]
+[ext_resource type="AudioStream" uid="uid://bch315ekuj481" path="res://audios/sfx/hitcomida.ogg" id="5_uskc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ianno"]
 size = Vector2(168, 164)
@@ -54,9 +56,13 @@ texture = ExtResource("2_3mlf1")
 metadata/_edit_lock_ = true
 
 [node name="SfxThrown" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bvukw")
+volume_db = -12.0
 bus = &"Efectos"
 
 [node name="SfxHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_uskc2")
+volume_db = -12.0
 bus = &"Efectos"
 
 [connection signal="body_entered" from="." to="SfxHit" method="play"]
