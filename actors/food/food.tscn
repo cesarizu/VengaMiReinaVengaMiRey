@@ -2,18 +2,16 @@
 
 [ext_resource type="Script" path="res://actors/food/food.gd" id="1_08vfs"]
 [ext_resource type="Texture2D" uid="uid://dhgs8t0pnpmir" path="res://icon.svg" id="2_3mlf1"]
+[ext_resource type="Texture2D" uid="uid://dyrel12bl843n" path="res://actors/food/bubble.png" id="2_af2jj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ianno"]
 size = Vector2(168, 164)
 
-[sub_resource type="Curve" id="Curve_cya2f"]
-max_value = 5.0
-_data = [Vector2(0, 2.76122), 0.0, 0.0, 0, 0, Vector2(1, 0.998037), -4.62249, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Gradient" id="Gradient_yxwb7"]
+offsets = PackedFloat32Array(0.0021692, 1)
+colors = PackedColorArray(0, 0.164706, 0.635294, 1, 0, 0.164706, 0.635294, 0)
 
-[sub_resource type="Gradient" id="Gradient_cqstb"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dip7d"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n6735"]
 
 [node name="Food" type="RigidBody2D"]
 input_pickable = true
@@ -28,15 +26,19 @@ metadata/_edit_lock_ = true
 
 [node name="Direction" type="Line2D" parent="."]
 unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(0, -1)
 points = PackedVector2Array(0, 0, 85, -149, 235, -268, 408, -336, 623, -361, 800, -319, 895, -266)
-width_curve = SubResource("Curve_cya2f")
-gradient = SubResource("Gradient_cqstb")
-texture = ExtResource("2_3mlf1")
+width = 15.0
+gradient = SubResource("Gradient_yxwb7")
+texture = ExtResource("2_af2jj")
 texture_mode = 1
+joint_mode = 1
 
 [node name="Hold" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = SubResource("PlaceholderTexture2D_dip7d")
+modulate = Color(0, 0.164706, 0.635294, 1)
+texture = SubResource("NoiseTexture2D_n6735")
 centered = false
 offset = Vector2(0, -10)
 region_enabled = true
