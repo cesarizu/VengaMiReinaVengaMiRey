@@ -12,6 +12,8 @@ func _ready():
 
 
 func _on_game_over_pressed():
+	GameManager._money_current = $HUD.money
+	#print(str(GameManager._money_current))
 	GameManager.end_game()
 	get_tree().change_scene_to_file("res://scenes/game/earningsScreen/earnings_screen.tscn")
 

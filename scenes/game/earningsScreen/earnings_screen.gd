@@ -5,20 +5,25 @@ extends CanvasLayer
 func _ready():
 	#Son variables de prueba para verificar que esté funcionando
 	#Luego conectamos las variables del GameManager
-	var achieved = 2
-	var price = 10 
+	var achieved = GameManager._achieved
 	var tips = 10
-	var incomes = achieved * price + tips
-	var failed = 5
-	var losses = price*5
+	var incomes = achieved * GameManager.price + tips
+	var failed = GameManager._failed
+	var losses = failed*5
 	var earnings = incomes - losses
+	GameManager._money_current += earnings
+	if earnings >= GameManager._highScore:
+		$NuevoRecord.text = "NUEVO RECORD"	
+		GameManager._highScore = earnings
+	else:
+		$NuevoRecord.text = ""
 	$Cuentas/ConseguidosNum.text = str(achieved)
-	$Cuentas/PrecioNum.text = str(price) 
+	$Cuentas/PrecioNum.text = str(GameManager.price) 
 	$Cuentas/PropinasNum.text = str(tips) 
 	$Cuentas/NoConseguidosNum.text = str(failed)
 	$Cuentas/TotalNum.text = str(earnings)
-	pass # Replace with function body.
-
+	GameManager._achieved = 0 #Pedidos entregados
+	GameManager._failed = 0 #Pedidos fallados
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

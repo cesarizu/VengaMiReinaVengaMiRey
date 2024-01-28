@@ -8,7 +8,12 @@ signal food_hit(client, food_info, good)
 
 var config: GameConfig = preload("res://config/game_config.tres")
 
-var _money_current := 10:
+var price := 10
+var _achieved = 0 #Pedidos entregados
+var _failed = 0 #Pedidos fallados
+var _highScore = 0
+
+var _money_current := 50:
 	set(value):
 		_money_current = value
 		on_money_updated.emit(value)

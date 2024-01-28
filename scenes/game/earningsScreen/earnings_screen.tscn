@@ -84,7 +84,7 @@ offset_top = 130.36
 offset_right = 867.0
 offset_bottom = 755.36
 theme = ExtResource("3_hmqke")
-theme_override_constants/h_separation = 325
+theme_override_constants/h_separation = 250
 theme_override_constants/v_separation = 30
 columns = 2
 
@@ -99,8 +99,7 @@ vertical_alignment = 1
 [node name="ConseguidosNum" type="Label" parent="Cuentas"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xevcq")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -175,5 +174,14 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NuevoRecord" type="Label" parent="."]
+offset_left = 1533.0
+offset_top = 628.0
+offset_right = 1891.0
+offset_bottom = 703.0
+theme = ExtResource("3_hmqke")
+theme_override_colors/font_color = Color(0.807843, 0.764706, 0.435294, 1)
+theme_override_font_sizes/font_size = 50
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

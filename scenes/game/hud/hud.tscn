@@ -22,13 +22,13 @@ unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -273.0
-offset_top = 56.0
+offset_left = -315.0
+offset_top = 80.0
 offset_right = -42.0
 offset_bottom = 693.0
 grow_horizontal = 0
 theme = ExtResource("4_4jla2")
-theme_override_constants/separation = 40
+theme_override_constants/separation = 30
 script = ExtResource("2_2lpoq")
 
 [node name="actual_earnings" type="Label" parent="."]
@@ -50,3 +50,34 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_vgeex")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_det78")
+
+[node name="Llama" type="Label" parent="."]
+offset_left = 1621.0
+offset_top = 31.0
+offset_right = 1872.0
+offset_bottom = 73.0
+theme = ExtResource("4_4jla2")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "Llama a los clientes:"
+
+[node name="Add" type="Button" parent="."]
+offset_left = 894.0
+offset_top = 24.0
+offset_right = 1002.0
+offset_bottom = 167.0
+theme = ExtResource("4_4jla2")
+theme_type_variation = &"FlatButton"
+text = "+"
+
+[node name="Loss" type="Button" parent="."]
+offset_left = 1017.0
+offset_top = 26.0
+offset_right = 1121.0
+offset_bottom = 169.0
+theme = ExtResource("4_4jla2")
+theme_type_variation = &"FlatButton"
+text = "-"
+
+[connection signal="pressed" from="Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Loss" to="." method="_on_loss_pressed"]
