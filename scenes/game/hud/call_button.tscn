@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b50dvqfm4l7s2"]
 
-[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/hud_buttons/hud_buttons.tres" id="1_xdsna"]
+[ext_resource type="Theme" uid="uid://d2g42ey2qlbr4" path="res://themes/default_theme.tres" id="1_xdsna"]
 
 [node name="Button" type="Button"]
 theme = ExtResource("1_xdsna")

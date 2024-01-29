@@ -26,7 +26,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		_holding = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		_hold_dest = Vector2(100, 300)
+		_hold_dest = Vector2.ZERO
 		_update_hold()
 
 
@@ -45,7 +45,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		_hold_dest += event.relative
 		_hold_dest = _hold_dest.limit_length(500)
-		print(_hold_dest)
 	
 	if event is InputEventMouseButton:
 		_holding = event.pressed
@@ -61,20 +60,23 @@ func _update_hold():
 
 		
 func _update_hold_and_direction():
-		var distance := _hold_dest.length()
-		var angle := _hold_dest.angle()
+	var dragging_down := 1 if _hold_dest.y > 0 else -1
+	var hold_dest = _hold_dest * dragging_down
 
-		_hold.region_rect.size.x = distance
-		_hold.rotation = angle
+	var distance := 0.0 if _hold_dest.y < 0 else _hold_dest.length()
+	var angle := _hold_dest.angle()
 
-		_throw_velocity = -_hold_dest.normalized() * clamp(distance, 0, 500) * throw_speed_multiplier
+	_hold.region_rect.size.x = distance
+	_hold.rotation = angle
 
-		var vel: Vector2 = _throw_velocity
-		var pos := Vector2.ZERO
-		for a in _direction.points.size():
-			_direction.points[a] = pos
-			vel += Vector2.DOWN * 980 * simlation_step_time
-			pos += vel * simlation_step_time
+	_throw_velocity = -hold_dest * throw_speed_multiplier
+
+	var vel: Vector2 = _throw_velocity
+	var pos := Vector2.ZERO
+	for a in _direction.points.size():
+		_direction.points[a] = pos
+		vel += Vector2.DOWN * 980 * simlation_step_time
+		pos += vel * simlation_step_time
 
 
 func _throw():
